@@ -20,6 +20,8 @@ import {
   Regex,
   ImageDown,
   Eye,
+  FileVideo,
+  Scissors,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -182,5 +184,19 @@ export const tools: Tool[] = [
     device: 'båda',
     connection: 'offline',
     icon: Eye,
+  },
+  {
+    id: 'mediakonverterare',
+    route: '/mediakonverterare',
+    device: 'dator',
+    connection: 'offline',
+    icon: FileVideo,
+  },
+  {
+    id: 'brodyrkortsvisare',
+    route: '/brodyrkortsvisare',
+    device: 'dator',
+    connection: 'offline',
+    icon: Scissors,
   },
 ]

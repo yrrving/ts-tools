@@ -13,12 +13,12 @@ const ThemeContext = createContext<ThemeContextValue | null>(null)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('ts-tools-theme')
+    const saved = localStorage.getItem('bytebox-theme')
     return VALID_THEMES.includes(saved as Theme) ? (saved as Theme) : 'dark'
   })
 
   useEffect(() => {
-    localStorage.setItem('ts-tools-theme', theme)
+    localStorage.setItem('bytebox-theme', theme)
     const html = document.documentElement
     html.classList.remove('dark', 'hc')
     if (theme === 'dark') {

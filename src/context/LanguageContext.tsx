@@ -18,14 +18,14 @@ const VALID_LANGUAGES: Language[] = ['sv', 'en', 'es', 'fr', 'de', 'pt', 'tr', '
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('ts-tools-language')
+    const saved = localStorage.getItem('bytebox-language')
     return VALID_LANGUAGES.includes(saved as Language) ? (saved as Language) : 'sv'
   })
 
   const dir = RTL_LANGUAGES.includes(language) ? 'rtl' : 'ltr'
 
   useEffect(() => {
-    localStorage.setItem('ts-tools-language', language)
+    localStorage.setItem('bytebox-language', language)
     const html = document.documentElement
     html.setAttribute('lang', language)
     html.setAttribute('dir', dir)

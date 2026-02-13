@@ -101,6 +101,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'Regex-testare', description: 'Testa och felsök reguljära uttryck' },
       'bildkomprimering': { name: 'Bildkomprimering', description: 'Komprimera bilder utan att tappa kvalitet' },
       'markdown-forhandsgranskning': { name: 'Markdown-förhandsgranskning', description: 'Förhandsgranska och redigera Markdown-text' },
+      'mediakonverterare': { name: 'Mediakonverterare', description: 'Konvertera mellan ljud- och videoformat — MP4, MP3, WAV, WebM, OGG och fler' },
+      'brodyrkortsvisare': { name: 'Brodyrkortsvisare', description: 'Visa och förhandsgranska brodyrmönster från PES, DST, JEF och andra format' },
     },
   },
   en: {
@@ -161,6 +163,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'Regex Tester', description: 'Test and debug regular expressions' },
       'bildkomprimering': { name: 'Image Compression', description: 'Compress images without losing quality' },
       'markdown-forhandsgranskning': { name: 'Markdown Preview', description: 'Preview and edit Markdown text' },
+      'mediakonverterare': { name: 'Media Converter', description: 'Convert between audio and video formats — MP4, MP3, WAV, WebM, OGG and more' },
+      'brodyrkortsvisare': { name: 'Embroidery Viewer', description: 'View and preview embroidery patterns from PES, DST, JEF and other formats' },
     },
   },
   es: {
@@ -221,6 +225,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'Probador de regex', description: 'Probar y depurar expresiones regulares' },
       'bildkomprimering': { name: 'Compresión de imágenes', description: 'Comprimir imágenes sin perder calidad' },
       'markdown-forhandsgranskning': { name: 'Vista previa de Markdown', description: 'Previsualizar y editar texto Markdown' },
+      'mediakonverterare': { name: 'Conversor de medios', description: 'Convertir entre formatos de audio y video — MP4, MP3, WAV, WebM, OGG y más' },
+      'brodyrkortsvisare': { name: 'Visor de bordado', description: 'Ver y previsualizar patrones de bordado de formatos PES, DST, JEF y otros' },
     },
   },
   fr: {
@@ -281,6 +287,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'Testeur de regex', description: 'Tester et déboguer des expressions régulières' },
       'bildkomprimering': { name: "Compression d'images", description: 'Compresser des images sans perte de qualité' },
       'markdown-forhandsgranskning': { name: 'Aperçu Markdown', description: 'Prévisualiser et éditer du texte Markdown' },
+      'mediakonverterare': { name: 'Convertisseur multimédia', description: 'Convertir entre formats audio et vidéo — MP4, MP3, WAV, WebM, OGG et plus' },
+      'brodyrkortsvisare': { name: 'Visionneuse de broderie', description: 'Afficher et prévisualiser des motifs de broderie aux formats PES, DST, JEF et autres' },
     },
   },
   de: {
@@ -341,6 +349,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'Regex-Tester', description: 'Reguläre Ausdrücke testen und debuggen' },
       'bildkomprimering': { name: 'Bildkomprimierung', description: 'Bilder ohne Qualitätsverlust komprimieren' },
       'markdown-forhandsgranskning': { name: 'Markdown-Vorschau', description: 'Markdown-Text anzeigen und bearbeiten' },
+      'mediakonverterare': { name: 'Medienkonverter', description: 'Zwischen Audio- und Videoformaten konvertieren — MP4, MP3, WAV, WebM, OGG und mehr' },
+      'brodyrkortsvisare': { name: 'Stickdatei-Betrachter', description: 'Stickmuster aus PES, DST, JEF und anderen Formaten anzeigen und vorab ansehen' },
     },
   },
   pt: {
@@ -401,6 +411,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'Testador de regex', description: 'Testar e depurar expressões regulares' },
       'bildkomprimering': { name: 'Compressão de imagens', description: 'Comprimir imagens sem perder qualidade' },
       'markdown-forhandsgranskning': { name: 'Pré-visualização Markdown', description: 'Pré-visualizar e editar texto Markdown' },
+      'mediakonverterare': { name: 'Conversor de mídia', description: 'Converter entre formatos de áudio e vídeo — MP4, MP3, WAV, WebM, OGG e mais' },
+      'brodyrkortsvisare': { name: 'Visualizador de bordado', description: 'Visualizar e pré-visualizar padrões de bordado em formatos PES, DST, JEF e outros' },
     },
   },
   tr: {
@@ -461,6 +473,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'Regex test aracı', description: 'Düzenli ifadeleri test et ve hata ayıkla' },
       'bildkomprimering': { name: 'Görüntü sıkıştırma', description: 'Kalite kaybı olmadan görüntüleri sıkıştır' },
       'markdown-forhandsgranskning': { name: 'Markdown önizleme', description: 'Markdown metnini önizle ve düzenle' },
+      'mediakonverterare': { name: 'Medya dönüştürücü', description: 'Ses ve video formatları arasında dönüştür — MP4, MP3, WAV, WebM, OGG ve daha fazlası' },
+      'brodyrkortsvisare': { name: 'Nakış dosyası görüntüleyici', description: 'PES, DST, JEF ve diğer formatlardan nakış desenlerini görüntüle ve önizle' },
     },
   },
   zh: {
@@ -521,6 +535,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: '正则测试器', description: '测试和调试正则表达式' },
       'bildkomprimering': { name: '图片压缩', description: '在不损失质量的情况下压缩图片' },
       'markdown-forhandsgranskning': { name: 'Markdown 预览', description: '预览和编辑 Markdown 文本' },
+      'mediakonverterare': { name: '媒体转换器', description: '在音频和视频格式之间转换 — MP4、MP3、WAV、WebM、OGG 等' },
+      'brodyrkortsvisare': { name: '刺绣查看器', description: '查看和预览 PES、DST、JEF 等格式的刺绣图案' },
     },
   },
   hi: {
@@ -581,6 +597,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'Regex परीक्षक', description: 'रेगुलर एक्सप्रेशन का परीक्षण और डीबग करें' },
       'bildkomprimering': { name: 'छवि संपीड़न', description: 'गुणवत्ता खोए बिना छवियों को संपीड़ित करें' },
       'markdown-forhandsgranskning': { name: 'Markdown पूर्वावलोकन', description: 'Markdown टेक्स्ट का पूर्वावलोकन और संपादन करें' },
+      'mediakonverterare': { name: 'मीडिया कनवर्टर', description: 'ऑडियो और वीडियो फ़ॉर्मैट के बीच बदलें — MP4, MP3, WAV, WebM, OGG और अधिक' },
+      'brodyrkortsvisare': { name: 'कढ़ाई दर्शक', description: 'PES, DST, JEF और अन्य प्रारूपों से कढ़ाई पैटर्न देखें और पूर्वावलोकन करें' },
     },
   },
   ja: {
@@ -641,6 +659,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: '正規表現テスター', description: '正規表現のテストとデバッグ' },
       'bildkomprimering': { name: '画像圧縮', description: '品質を落とさずに画像を圧縮' },
       'markdown-forhandsgranskning': { name: 'Markdownプレビュー', description: 'Markdownテキストのプレビューと編集' },
+      'mediakonverterare': { name: 'メディアコンバーター', description: '音声・動画フォーマット間の変換 — MP4、MP3、WAV、WebM、OGGなど' },
+      'brodyrkortsvisare': { name: '刺繍ビューアー', description: 'PES、DST、JEFなどの刺繍パターンを表示・プレビュー' },
     },
   },
   fa: {
@@ -701,6 +721,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'آزمایشگر Regex', description: 'آزمایش و اشکال‌زدایی عبارات منظم' },
       'bildkomprimering': { name: 'فشرده‌سازی تصویر', description: 'فشرده‌سازی تصاویر بدون افت کیفیت' },
       'markdown-forhandsgranskning': { name: 'پیش‌نمایش Markdown', description: 'پیش‌نمایش و ویرایش متن Markdown' },
+      'mediakonverterare': { name: 'مبدل رسانه', description: 'تبدیل بین فرمت‌های صوتی و تصویری — MP4، MP3، WAV، WebM، OGG و بیشتر' },
+      'brodyrkortsvisare': { name: 'نمایشگر گلدوزی', description: 'نمایش و پیش‌نمایش الگوهای گلدوزی از فرمت‌های PES، DST، JEF و غیره' },
     },
   },
   ar: {
@@ -761,6 +783,8 @@ export const translations: Record<string, Translation> = {
       'regex-testare': { name: 'اختبار Regex', description: 'اختبار وتصحيح التعبيرات المنتظمة' },
       'bildkomprimering': { name: 'ضغط الصور', description: 'ضغط الصور دون فقدان الجودة' },
       'markdown-forhandsgranskning': { name: 'معاينة Markdown', description: 'معاينة وتحرير نص Markdown' },
+      'mediakonverterare': { name: 'محول الوسائط', description: 'التحويل بين صيغ الصوت والفيديو — MP4 وMP3 وWAV وWebM وOGG والمزيد' },
+      'brodyrkortsvisare': { name: 'عارض التطريز', description: 'عرض ومعاينة أنماط التطريز من صيغ PES وDST وJEF وغيرها' },
     },
   },
 }

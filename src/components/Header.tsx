@@ -41,7 +41,7 @@ export default function Header() {
       <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white no-underline">
           <Wrench className="h-6 w-6 text-blue-400 hc:text-white" />
-          ts-tools
+          Bytebox
         </Link>
         <div className="flex items-center gap-3">
           <Link
