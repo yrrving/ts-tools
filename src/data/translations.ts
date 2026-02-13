@@ -26,15 +26,6 @@ export interface Translation {
     online: string
     offline: string
   }
-  connectionTooltip?: {
-    online: string
-    offline: string
-  }
-  deviceTooltip?: {
-    dator: string
-    mobil: string
-    båda: string
-  }
   theme: {
     light: string
     dark: string
@@ -67,22 +58,13 @@ export const translations: Record<string, Translation> = {
       offline: 'Offline',
     },
     device: {
-      dator: 'Dator',
-      mobil: 'Mobil',
-      båda: 'Båda',
+      dator: 'Bäst på dator',
+      mobil: 'Bäst på mobil',
+      båda: 'Alla enheter',
     },
     connection: {
-      online: 'Online',
-      offline: 'Offline',
-    },
-    connectionTooltip: {
-      online: 'Kräver internetanslutning',
-      offline: 'Fungerar utan internet',
-    },
-    deviceTooltip: {
-      dator: 'Optimerat för dator',
-      mobil: 'Optimerat för mobil',
-      båda: 'Fungerar på både dator och mobil',
+      online: 'Kräver internet',
+      offline: 'Funkar offline',
     },
     theme: {
       light: 'Ljust',
@@ -138,22 +120,13 @@ export const translations: Record<string, Translation> = {
       offline: 'Offline',
     },
     device: {
-      dator: 'Desktop',
-      mobil: 'Mobile',
-      båda: 'Both',
+      dator: 'Best on desktop',
+      mobil: 'Best on mobile',
+      båda: 'All devices',
     },
     connection: {
-      online: 'Online',
-      offline: 'Offline',
-    },
-    connectionTooltip: {
-      online: 'Requires internet connection',
-      offline: 'Works without internet',
-    },
-    deviceTooltip: {
-      dator: 'Optimized for desktop',
-      mobil: 'Optimized for mobile',
-      båda: 'Works on both desktop and mobile',
+      online: 'Requires internet',
+      offline: 'Works offline',
     },
     theme: {
       light: 'Light',
@@ -209,22 +182,13 @@ export const translations: Record<string, Translation> = {
       offline: 'Sin conexión',
     },
     device: {
-      dator: 'Escritorio',
-      mobil: 'Móvil',
-      båda: 'Ambos',
+      dator: 'Mejor en escritorio',
+      mobil: 'Mejor en móvil',
+      båda: 'Todos los dispositivos',
     },
     connection: {
-      online: 'En línea',
-      offline: 'Sin conexión',
-    },
-    connectionTooltip: {
-      online: 'Requiere conexión a Internet',
-      offline: 'Funciona sin Internet',
-    },
-    deviceTooltip: {
-      dator: 'Optimizado para escritorio',
-      mobil: 'Optimizado para móvil',
-      båda: 'Funciona en escritorio y móvil',
+      online: 'Requiere internet',
+      offline: 'Funciona sin conexión',
     },
     theme: {
       light: 'Claro',
@@ -280,22 +244,13 @@ export const translations: Record<string, Translation> = {
       offline: 'Hors ligne',
     },
     device: {
-      dator: 'Bureau',
-      mobil: 'Mobile',
-      båda: 'Les deux',
+      dator: 'Optimal sur ordi',
+      mobil: 'Optimal sur mobile',
+      båda: 'Tous les appareils',
     },
     connection: {
-      online: 'En ligne',
-      offline: 'Hors ligne',
-    },
-    connectionTooltip: {
-      online: 'Nécessite une connexion Internet',
-      offline: 'Fonctionne sans Internet',
-    },
-    deviceTooltip: {
-      dator: 'Optimisé pour ordinateur',
-      mobil: 'Optimisé pour mobile',
-      båda: 'Fonctionne sur ordinateur et mobile',
+      online: 'Internet requis',
+      offline: 'Fonctionne hors ligne',
     },
     theme: {
       light: 'Clair',
@@ -351,22 +306,13 @@ export const translations: Record<string, Translation> = {
       offline: 'Offline',
     },
     device: {
-      dator: 'Desktop',
-      mobil: 'Mobil',
-      båda: 'Beide',
+      dator: 'Am besten am Desktop',
+      mobil: 'Am besten am Handy',
+      båda: 'Alle Geräte',
     },
     connection: {
-      online: 'Online',
-      offline: 'Offline',
-    },
-    connectionTooltip: {
-      online: 'Erfordert Internetverbindung',
-      offline: 'Funktioniert ohne Internet',
-    },
-    deviceTooltip: {
-      dator: 'Optimiert für Desktop',
-      mobil: 'Optimiert für Mobilgeräte',
-      båda: 'Funktioniert auf Desktop und Mobilgeräten',
+      online: 'Internet nötig',
+      offline: 'Funktioniert offline',
     },
     theme: {
       light: 'Hell',
@@ -422,22 +368,13 @@ export const translations: Record<string, Translation> = {
       offline: 'Offline',
     },
     device: {
-      dator: 'Desktop',
-      mobil: 'Móvel',
-      båda: 'Ambos',
+      dator: 'Melhor no desktop',
+      mobil: 'Melhor no celular',
+      båda: 'Todos os dispositivos',
     },
     connection: {
-      online: 'Online',
-      offline: 'Offline',
-    },
-    connectionTooltip: {
-      online: 'Requer conexão com a Internet',
-      offline: 'Funciona sem Internet',
-    },
-    deviceTooltip: {
-      dator: 'Otimizado para desktop',
-      mobil: 'Otimizado para celular',
-      båda: 'Funciona em desktop e celular',
+      online: 'Requer internet',
+      offline: 'Funciona offline',
     },
     theme: {
       light: 'Claro',
@@ -493,22 +430,13 @@ export const translations: Record<string, Translation> = {
       offline: 'Çevrimdışı',
     },
     device: {
-      dator: 'Masaüstü',
-      mobil: 'Mobil',
-      båda: 'Her ikisi',
+      dator: 'Masaüstünde en iyi',
+      mobil: 'Mobilde en iyi',
+      båda: 'Tüm cihazlar',
     },
     connection: {
-      online: 'Çevrimiçi',
-      offline: 'Çevrimdışı',
-    },
-    connectionTooltip: {
-      online: 'İnternet bağlantısı gerektirir',
-      offline: 'İnternet olmadan çalışır',
-    },
-    deviceTooltip: {
-      dator: 'Masaüstü için optimize edildi',
-      mobil: 'Mobil için optimize edildi',
-      båda: 'Hem masaüstü hem mobilde çalışır',
+      online: 'İnternet gerekli',
+      offline: 'Çevrimdışı çalışır',
     },
     theme: {
       light: 'Açık',
@@ -564,22 +492,13 @@ export const translations: Record<string, Translation> = {
       offline: '离线',
     },
     device: {
-      dator: '桌面',
-      mobil: '移动',
-      båda: '两者',
+      dator: '适合桌面',
+      mobil: '适合手机',
+      båda: '所有设备',
     },
     connection: {
-      online: '在线',
-      offline: '离线',
-    },
-    connectionTooltip: {
-      online: '需要互联网连接',
-      offline: '无需互联网即可使用',
-    },
-    deviceTooltip: {
-      dator: '针对桌面优化',
-      mobil: '针对移动设备优化',
-      båda: '适用于桌面和移动设备',
+      online: '需要联网',
+      offline: '离线可用',
     },
     theme: {
       light: '浅色',
@@ -635,22 +554,13 @@ export const translations: Record<string, Translation> = {
       offline: 'ऑफ़लाइन',
     },
     device: {
-      dator: 'डेस्कटॉप',
-      mobil: 'मोबाइल',
-      båda: 'दोनों',
+      dator: 'डेस्कटॉप पर सर्वोत्तम',
+      mobil: 'मोबाइल पर सर्वोत्तम',
+      båda: 'सभी उपकरण',
     },
     connection: {
-      online: 'ऑनलाइन',
-      offline: 'ऑफ़लाइन',
-    },
-    connectionTooltip: {
-      online: 'इंटरनेट कनेक्शन आवश्यक',
-      offline: 'बिना इंटरनेट के काम करता है',
-    },
-    deviceTooltip: {
-      dator: 'डेस्कटॉप के लिए अनुकूलित',
-      mobil: 'मोबाइल के लिए अनुकूलित',
-      båda: 'डेस्कटॉप और मोबाइल दोनों पर काम करता है',
+      online: 'इंटरनेट ज़रूरी',
+      offline: 'ऑफ़लाइन काम करता है',
     },
     theme: {
       light: 'हल्का',
@@ -706,22 +616,13 @@ export const translations: Record<string, Translation> = {
       offline: 'オフライン',
     },
     device: {
-      dator: 'デスクトップ',
-      mobil: 'モバイル',
-      båda: '両方',
+      dator: 'PC向け',
+      mobil: 'モバイル向け',
+      båda: '全デバイス対応',
     },
     connection: {
-      online: 'オンライン',
-      offline: 'オフライン',
-    },
-    connectionTooltip: {
-      online: 'インターネット接続が必要',
-      offline: 'インターネットなしで動作',
-    },
-    deviceTooltip: {
-      dator: 'デスクトップ向けに最適化',
-      mobil: 'モバイル向けに最適化',
-      båda: 'デスクトップとモバイルの両方で動作',
+      online: 'ネット接続必要',
+      offline: 'オフライン対応',
     },
     theme: {
       light: 'ライト',
@@ -777,22 +678,13 @@ export const translations: Record<string, Translation> = {
       offline: 'آفلاین',
     },
     device: {
-      dator: 'دسکتاپ',
-      mobil: 'موبایل',
-      båda: 'هر دو',
+      dator: 'بهترین روی دسکتاپ',
+      mobil: 'بهترین روی موبایل',
+      båda: 'همه دستگاه‌ها',
     },
     connection: {
-      online: 'آنلاین',
-      offline: 'آفلاین',
-    },
-    connectionTooltip: {
-      online: 'نیاز به اتصال اینترنت دارد',
+      online: 'نیاز به اینترنت',
       offline: 'بدون اینترنت کار می‌کند',
-    },
-    deviceTooltip: {
-      dator: 'بهینه‌سازی شده برای دسکتاپ',
-      mobil: 'بهینه‌سازی شده برای موبایل',
-      båda: 'روی دسکتاپ و موبایل کار می‌کند',
     },
     theme: {
       light: 'روشن',
@@ -848,22 +740,13 @@ export const translations: Record<string, Translation> = {
       offline: 'غير متصل',
     },
     device: {
-      dator: 'سطح المكتب',
-      mobil: 'الجوال',
-      båda: 'كلاهما',
+      dator: 'الأفضل على الحاسوب',
+      mobil: 'الأفضل على الجوال',
+      båda: 'جميع الأجهزة',
     },
     connection: {
-      online: 'متصل',
-      offline: 'غير متصل',
-    },
-    connectionTooltip: {
-      online: 'يتطلب اتصالاً بالإنترنت',
+      online: 'يتطلب إنترنت',
       offline: 'يعمل بدون إنترنت',
-    },
-    deviceTooltip: {
-      dator: 'محسّن لسطح المكتب',
-      mobil: 'محسّن للجوال',
-      båda: 'يعمل على سطح المكتب والجوال',
     },
     theme: {
       light: 'فاتح',

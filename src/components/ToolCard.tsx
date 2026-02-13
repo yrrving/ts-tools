@@ -19,12 +19,6 @@ export default function ToolCard({ tool }: ToolCardProps) {
   const translation = t.tools[tool.id]
   const DeviceIcon = deviceIcons[tool.device]
 
-  const connectionTooltip = tool.connection === 'online'
-    ? t.connectionTooltip?.online ?? 'Requires internet'
-    : t.connectionTooltip?.offline ?? 'Works without internet'
-
-  const deviceTooltip = t.deviceTooltip?.[tool.device] ?? ''
-
   return (
     <Link
       to={tool.route}
@@ -36,7 +30,6 @@ export default function ToolCard({ tool }: ToolCardProps) {
         </div>
         <div className="flex gap-1.5">
           <span
-            title={connectionTooltip}
             className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${
               tool.connection === 'online'
                 ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 hc:bg-white hc:text-black'
@@ -50,7 +43,6 @@ export default function ToolCard({ tool }: ToolCardProps) {
             {t.connection[tool.connection]}
           </span>
           <span
-            title={deviceTooltip}
             className="flex items-center gap-1 rounded-full bg-gray-100 dark:bg-gray-700 hc:bg-gray-900 hc:border hc:border-white px-2 py-0.5 text-xs font-medium text-gray-600 dark:text-gray-300 hc:text-white"
           >
             <DeviceIcon className="h-3 w-3" />
