@@ -59,7 +59,7 @@ export default function Journal() {
         to="/"
         className="mt-8 inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hc:text-white transition-colors hover:text-gray-900 dark:hover:text-white"
       >
-        <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
+        <ArrowLeft className="h-4 w-4" />
         {t.backToTools}
       </Link>
     </div>

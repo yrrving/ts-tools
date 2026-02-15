@@ -10,12 +10,6 @@ const languageOptions: { value: Language; label: string }[] = [
   { value: 'fr', label: 'Français' },
   { value: 'de', label: 'Deutsch' },
   { value: 'pt', label: 'Português' },
-  { value: 'tr', label: 'Türkçe' },
-  { value: 'zh', label: '中文' },
-  { value: 'hi', label: 'हिन्दी' },
-  { value: 'ja', label: '日本語' },
-  { value: 'fa', label: 'فارسی' },
-  { value: 'ar', label: 'العربية' },
 ]
 
 const themeIcon: Record<Theme, typeof Sun> = {
