@@ -10,6 +10,53 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '0.8.0',
+    date: '2026-02-16',
+    title: {
+      sv: 'Bilder, Tidszoner & Filanalys',
+      en: 'Images, Time Zones & File Analysis',
+      es: 'Imágenes, Zonas horarias y Análisis',
+      fr: 'Images, Fuseaux horaires & Analyse',
+      de: 'Bilder, Zeitzonen & Dateianalyse',
+      pt: 'Imagens, Fusos horários e Análise',
+    },
+    changes: [
+      {
+        type: 'added',
+        text: {
+          sv: 'Bildkomprimering med kvalitetsreglage, max bredd och jämförelsevy',
+          en: 'Image compression with quality slider, max width and comparison view',
+          es: 'Compresión de imágenes con control de calidad, ancho máximo y vista comparativa',
+          fr: 'Compression d\'images avec curseur de qualité, largeur max et vue comparative',
+          de: 'Bildkomprimierung mit Qualitätsregler, maximaler Breite und Vergleichsansicht',
+          pt: 'Compressão de imagens com controle de qualidade, largura máxima e vista comparativa',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Tidszoner med live-klocka, lägg till/ta bort städer',
+          en: 'Time zones with live clock, add/remove cities',
+          es: 'Zonas horarias con reloj en vivo, añadir/eliminar ciudades',
+          fr: 'Fuseaux horaires avec horloge en direct, ajouter/supprimer des villes',
+          de: 'Zeitzonen mit Live-Uhr, Städte hinzufügen/entfernen',
+          pt: 'Fusos horários com relógio ao vivo, adicionar/remover cidades',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Filanalys med metadata, bildförhandsgranskning och textinnehåll',
+          en: 'File analysis with metadata, image preview and text content',
+          es: 'Análisis de archivos con metadatos, vista previa de imagen y contenido de texto',
+          fr: 'Analyse de fichiers avec métadonnées, aperçu d\'image et contenu texte',
+          de: 'Dateianalyse mit Metadaten, Bildvorschau und Textinhalt',
+          pt: 'Análise de arquivos com metadados, pré-visualização de imagem e conteúdo de texto',
+        },
+      },
+    ],
+  },
+  {
     version: '0.7.0',
     date: '2026-02-16',
     title: {

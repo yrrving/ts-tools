@@ -14,6 +14,9 @@ import KeyboardTester from './pages/tools/KeyboardTester'
 import UnitConverter from './pages/tools/UnitConverter'
 import ColorPalette from './pages/tools/ColorPalette'
 import MarkdownPreview from './pages/tools/MarkdownPreview'
+import ImageCompressor from './pages/tools/ImageCompressor'
+import TimeZones from './pages/tools/TimeZones'
+import FileAnalyzer from './pages/tools/FileAnalyzer'
 
 export default function App() {
   return (
@@ -32,6 +35,9 @@ export default function App() {
         <Route path="/enhetsomvandlare" element={<UnitConverter />} />
         <Route path="/fargpalett" element={<ColorPalette />} />
         <Route path="/markdown-forhandsgranskning" element={<MarkdownPreview />} />
+        <Route path="/bildkomprimering" element={<ImageCompressor />} />
+        <Route path="/tidszoner" element={<TimeZones />} />
+        <Route path="/filanalys" element={<FileAnalyzer />} />
         <Route path="/:slug" element={<Placeholder />} />
       </Route>
     </Routes>
