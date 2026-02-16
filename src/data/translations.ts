@@ -115,6 +115,28 @@ export interface Translation {
     history: string
     clear: string
   }
+  unitConverter?: {
+    length: string
+    weight: string
+    temperature: string
+    speed: string
+    data: string
+  }
+  colorPalette?: {
+    addColor: string
+    randomize: string
+    copyAll: string
+    copied: string
+  }
+  markdownPreview?: {
+    edit: string
+    split: string
+    preview: string
+    copyHtml: string
+    copied: string
+    clear: string
+    placeholder: string
+  }
   tools: Record<string, ToolTranslation>
 }
 
@@ -230,14 +252,36 @@ export const translations: Record<string, Translation> = {
       history: 'Historik',
       clear: 'Rensa',
     },
+    unitConverter: {
+      length: 'Längd',
+      weight: 'Vikt',
+      temperature: 'Temperatur',
+      speed: 'Hastighet',
+      data: 'Data',
+    },
+    colorPalette: {
+      addColor: 'Lägg till färg',
+      randomize: 'Slumpa',
+      copyAll: 'Kopiera alla',
+      copied: 'Kopierat!',
+    },
+    markdownPreview: {
+      edit: 'Redigera',
+      split: 'Delad',
+      preview: 'Förhandsgranskning',
+      copyHtml: 'Kopiera HTML',
+      copied: 'Kopierat!',
+      clear: 'Rensa',
+      placeholder: 'Skriv Markdown här...',
+    },
     tools: {
       'png-till-svg': { name: 'PNG till SVG', description: 'Konvertera PNG-bilder till SVG-format' },
-      'fargpalett': { name: 'Färgpalett', description: 'Skapa och hantera färgpaletter' },
+      'fargpalett': { name: 'Färgpalett', description: 'Skapa och hantera färgpaletter', hint: 'Skapa färgpaletter för dina projekt. Välj färger med en color picker, se HEX/RGB/HSL-värden och kopiera dem direkt.' },
       'filanalys': { name: 'Filanalys', description: 'Analysera filinnehåll och metadata' },
       'qr-kod': { name: 'QR-kod', description: 'Generera och skanna QR-koder', hint: 'Skapa QR-koder för URL:er, Wi-Fi-lösenord eller valfri text. Välj färger och storlek, ladda ner som PNG — allt sker lokalt i webbläsaren.' },
       'base64-kodare': { name: 'Base64-kodare', description: 'Koda och avkoda Base64-text', hint: 'Base64 används för att bädda in data i URL:er, e-post och API-anrop. Smidigt när du felsöker eller behöver skicka binärdata som text.' },
       'linjal': { name: 'Linjal', description: 'Mät avstånd på skärmen' },
-      'enhetsomvandlare': { name: 'Enhetsomvandlare', description: 'Konvertera mellan olika måttenheter' },
+      'enhetsomvandlare': { name: 'Enhetsomvandlare', description: 'Konvertera mellan olika måttenheter', hint: 'Konvertera snabbt mellan metriska och imperiala enheter — längd, vikt, temperatur, hastighet och datastorlek.' },
       'tidszoner': { name: 'Tidszoner', description: 'Jämför tid i olika tidszoner' },
       'hash-generator': { name: 'Hash-generator', description: 'Generera SHA-256, SHA-512 och andra hash-värden', hint: 'Hash-värden används för att verifiera att filer inte ändrats, kontrollera dataintegritet och inom kryptografi. Klistra in valfri text och se dess hash direkt.' },
       'losenordsgenerator': { name: 'Lösenordsgenerator', description: 'Skapa starka och säkra lösenord', hint: 'Återanvända lösenord är en av de vanligaste säkerhetsriskerna. Generera unika, starka lösenord för varje tjänst — direkt i webbläsaren utan att skicka data någonstans.' },
@@ -251,7 +295,7 @@ export const translations: Record<string, Translation> = {
       'tal-till-text': { name: 'Tal till text', description: 'Omvandla talat ljud till skriven text' },
       'regex-testare': { name: 'Regex-testare', description: 'Testa och felsök reguljära uttryck', hint: 'Skriv ett regex-mönster och se matchningar markeras live i din text. Visar fångstgrupper och index — perfekt för att bygga och felsöka mönster.' },
       'bildkomprimering': { name: 'Bildkomprimering', description: 'Komprimera bilder utan att tappa kvalitet' },
-      'markdown-forhandsgranskning': { name: 'Markdown-förhandsgranskning', description: 'Förhandsgranska och redigera Markdown-text' },
+      'markdown-forhandsgranskning': { name: 'Markdown-förhandsgranskning', description: 'Förhandsgranska och redigera Markdown-text', hint: 'Skriv Markdown och se resultatet live. Perfekt för README-filer, dokumentation eller blogginlägg — med delad vy och HTML-export.' },
       'mediakonverterare': { name: 'Mediakonverterare', description: 'Konvertera mellan ljud- och videoformat — MP4, MP3, WAV, WebM, OGG och fler' },
       'brodyrkortsvisare': { name: 'Brodyrkortsvisare', description: 'Visa och förhandsgranska brodyrmönster från PES, DST, JEF och andra format' },
     },
@@ -367,14 +411,36 @@ export const translations: Record<string, Translation> = {
       history: 'History',
       clear: 'Clear',
     },
+    unitConverter: {
+      length: 'Length',
+      weight: 'Weight',
+      temperature: 'Temperature',
+      speed: 'Speed',
+      data: 'Data',
+    },
+    colorPalette: {
+      addColor: 'Add color',
+      randomize: 'Randomize',
+      copyAll: 'Copy all',
+      copied: 'Copied!',
+    },
+    markdownPreview: {
+      edit: 'Edit',
+      split: 'Split',
+      preview: 'Preview',
+      copyHtml: 'Copy HTML',
+      copied: 'Copied!',
+      clear: 'Clear',
+      placeholder: 'Write Markdown here...',
+    },
     tools: {
       'png-till-svg': { name: 'PNG to SVG', description: 'Convert PNG images to SVG format' },
-      'fargpalett': { name: 'Color Palette', description: 'Create and manage color palettes' },
+      'fargpalett': { name: 'Color Palette', description: 'Create and manage color palettes', hint: 'Create color palettes for your projects. Pick colors with a color picker, see HEX/RGB/HSL values and copy them directly.' },
       'filanalys': { name: 'File Analysis', description: 'Analyze file content and metadata' },
       'qr-kod': { name: 'QR Code', description: 'Generate and scan QR codes', hint: 'Create QR codes for URLs, Wi-Fi passwords or any text. Choose colors and size, download as PNG — everything happens locally in your browser.' },
       'base64-kodare': { name: 'Base64 Encoder', description: 'Encode and decode Base64 text', hint: 'Base64 is used to embed data in URLs, emails and API calls. Handy when debugging or when you need to send binary data as text.' },
       'linjal': { name: 'Ruler', description: 'Measure distances on screen' },
-      'enhetsomvandlare': { name: 'Unit Converter', description: 'Convert between different units of measurement' },
+      'enhetsomvandlare': { name: 'Unit Converter', description: 'Convert between different units of measurement', hint: 'Quickly convert between metric and imperial units — length, weight, temperature, speed and data size.' },
       'tidszoner': { name: 'Time Zones', description: 'Compare time across different time zones' },
       'hash-generator': { name: 'Hash Generator', description: 'Generate SHA-256, SHA-512 and other hash values', hint: 'Hash values are used to verify files haven\'t been altered, check data integrity and in cryptography. Paste any text and see its hash instantly.' },
       'losenordsgenerator': { name: 'Password Generator', description: 'Create strong and secure passwords', hint: 'Reusing passwords is one of the most common security risks. Generate unique, strong passwords for every service — right in your browser without sending data anywhere.' },
@@ -388,7 +454,7 @@ export const translations: Record<string, Translation> = {
       'tal-till-text': { name: 'Speech to Text', description: 'Convert spoken audio to written text' },
       'regex-testare': { name: 'Regex Tester', description: 'Test and debug regular expressions', hint: 'Write a regex pattern and see matches highlighted live in your text. Shows capture groups and index — perfect for building and debugging patterns.' },
       'bildkomprimering': { name: 'Image Compression', description: 'Compress images without losing quality' },
-      'markdown-forhandsgranskning': { name: 'Markdown Preview', description: 'Preview and edit Markdown text' },
+      'markdown-forhandsgranskning': { name: 'Markdown Preview', description: 'Preview and edit Markdown text', hint: 'Write Markdown and see the result live. Perfect for README files, documentation or blog posts — with split view and HTML export.' },
       'mediakonverterare': { name: 'Media Converter', description: 'Convert between audio and video formats — MP4, MP3, WAV, WebM, OGG and more' },
       'brodyrkortsvisare': { name: 'Embroidery Viewer', description: 'View and preview embroidery patterns from PES, DST, JEF and other formats' },
     },
@@ -504,14 +570,36 @@ export const translations: Record<string, Translation> = {
       history: 'Historial',
       clear: 'Limpiar',
     },
+    unitConverter: {
+      length: 'Longitud',
+      weight: 'Peso',
+      temperature: 'Temperatura',
+      speed: 'Velocidad',
+      data: 'Datos',
+    },
+    colorPalette: {
+      addColor: 'Añadir color',
+      randomize: 'Aleatorio',
+      copyAll: 'Copiar todos',
+      copied: '¡Copiado!',
+    },
+    markdownPreview: {
+      edit: 'Editar',
+      split: 'Dividido',
+      preview: 'Vista previa',
+      copyHtml: 'Copiar HTML',
+      copied: '¡Copiado!',
+      clear: 'Limpiar',
+      placeholder: 'Escribe Markdown aquí...',
+    },
     tools: {
       'png-till-svg': { name: 'PNG a SVG', description: 'Convertir imágenes PNG a formato SVG' },
-      'fargpalett': { name: 'Paleta de colores', description: 'Crear y gestionar paletas de colores' },
+      'fargpalett': { name: 'Paleta de colores', description: 'Crear y gestionar paletas de colores', hint: 'Crea paletas de colores para tus proyectos. Elige colores con un selector, ve valores HEX/RGB/HSL y cópialos directamente.' },
       'filanalys': { name: 'Análisis de archivos', description: 'Analizar contenido y metadatos de archivos' },
       'qr-kod': { name: 'Código QR', description: 'Generar y escanear códigos QR', hint: 'Crea códigos QR para URLs, contraseñas Wi-Fi o cualquier texto. Elige colores y tamaño, descarga como PNG — todo ocurre localmente en tu navegador.' },
       'base64-kodare': { name: 'Codificador Base64', description: 'Codificar y decodificar texto Base64', hint: 'Base64 se usa para incrustar datos en URLs, correos y llamadas API. Útil para depurar o enviar datos binarios como texto.' },
       'linjal': { name: 'Regla', description: 'Medir distancias en la pantalla' },
-      'enhetsomvandlare': { name: 'Conversor de unidades', description: 'Convertir entre diferentes unidades de medida' },
+      'enhetsomvandlare': { name: 'Conversor de unidades', description: 'Convertir entre diferentes unidades de medida', hint: 'Convierte rápidamente entre unidades métricas e imperiales — longitud, peso, temperatura, velocidad y tamaño de datos.' },
       'tidszoner': { name: 'Zonas horarias', description: 'Comparar la hora en diferentes zonas horarias' },
       'hash-generator': { name: 'Generador de hash', description: 'Generar valores SHA-256, SHA-512 y otros hash', hint: 'Los valores hash se usan para verificar que los archivos no han sido alterados y en criptografía. Pega cualquier texto y ve su hash al instante.' },
       'losenordsgenerator': { name: 'Generador de contraseñas', description: 'Crear contraseñas fuertes y seguras', hint: 'Reutilizar contraseñas es uno de los riesgos de seguridad más comunes. Genera contraseñas únicas y fuertes para cada servicio — directamente en tu navegador.' },
@@ -525,7 +613,7 @@ export const translations: Record<string, Translation> = {
       'tal-till-text': { name: 'Voz a texto', description: 'Convertir audio hablado en texto escrito' },
       'regex-testare': { name: 'Probador de regex', description: 'Probar y depurar expresiones regulares', hint: 'Escribe un patrón regex y ve las coincidencias resaltadas en vivo en tu texto. Muestra grupos de captura e índice — perfecto para construir y depurar patrones.' },
       'bildkomprimering': { name: 'Compresión de imágenes', description: 'Comprimir imágenes sin perder calidad' },
-      'markdown-forhandsgranskning': { name: 'Vista previa de Markdown', description: 'Previsualizar y editar texto Markdown' },
+      'markdown-forhandsgranskning': { name: 'Vista previa de Markdown', description: 'Previsualizar y editar texto Markdown', hint: 'Escribe Markdown y ve el resultado en vivo. Perfecto para archivos README, documentación o publicaciones de blog — con vista dividida y exportación HTML.' },
       'mediakonverterare': { name: 'Conversor de medios', description: 'Convertir entre formatos de audio y video — MP4, MP3, WAV, WebM, OGG y más' },
       'brodyrkortsvisare': { name: 'Visor de bordado', description: 'Ver y previsualizar patrones de bordado de formatos PES, DST, JEF y otros' },
     },
@@ -641,14 +729,36 @@ export const translations: Record<string, Translation> = {
       history: 'Historique',
       clear: 'Effacer',
     },
+    unitConverter: {
+      length: 'Longueur',
+      weight: 'Poids',
+      temperature: 'Température',
+      speed: 'Vitesse',
+      data: 'Données',
+    },
+    colorPalette: {
+      addColor: 'Ajouter une couleur',
+      randomize: 'Aléatoire',
+      copyAll: 'Tout copier',
+      copied: 'Copié !',
+    },
+    markdownPreview: {
+      edit: 'Éditer',
+      split: 'Divisé',
+      preview: 'Aperçu',
+      copyHtml: 'Copier HTML',
+      copied: 'Copié !',
+      clear: 'Effacer',
+      placeholder: 'Écrivez du Markdown ici...',
+    },
     tools: {
       'png-till-svg': { name: 'PNG vers SVG', description: 'Convertir des images PNG en format SVG' },
-      'fargpalett': { name: 'Palette de couleurs', description: 'Créer et gérer des palettes de couleurs' },
+      'fargpalett': { name: 'Palette de couleurs', description: 'Créer et gérer des palettes de couleurs', hint: 'Créez des palettes de couleurs pour vos projets. Choisissez des couleurs, voyez les valeurs HEX/RGB/HSL et copiez-les directement.' },
       'filanalys': { name: 'Analyse de fichiers', description: 'Analyser le contenu et les métadonnées des fichiers' },
       'qr-kod': { name: 'Code QR', description: 'Générer et scanner des codes QR', hint: 'Créez des codes QR pour des URLs, mots de passe Wi-Fi ou tout texte. Choisissez couleurs et taille, téléchargez en PNG — tout se passe localement dans votre navigateur.' },
       'base64-kodare': { name: 'Encodeur Base64', description: 'Encoder et décoder du texte Base64', hint: 'Base64 est utilisé pour intégrer des données dans les URLs, e-mails et appels API. Pratique pour le débogage ou l\'envoi de données binaires sous forme de texte.' },
       'linjal': { name: 'Règle', description: "Mesurer les distances à l'écran" },
-      'enhetsomvandlare': { name: 'Convertisseur d\'unités', description: 'Convertir entre différentes unités de mesure' },
+      'enhetsomvandlare': { name: 'Convertisseur d\'unités', description: 'Convertir entre différentes unités de mesure', hint: 'Convertissez rapidement entre unités métriques et impériales — longueur, poids, température, vitesse et taille des données.' },
       'tidszoner': { name: 'Fuseaux horaires', description: "Comparer l'heure dans différents fuseaux horaires" },
       'hash-generator': { name: 'Générateur de hash', description: 'Générer des valeurs MD5, SHA-256 et autres hash', hint: 'Vérifiez l\'intégrité des fichiers ou comparez des checksums. Les hash sont utilisés partout dans la sécurité, Git et la validation de téléchargements.' },
       'losenordsgenerator': { name: 'Générateur de mots de passe', description: 'Créer des mots de passe forts et sécurisés', hint: 'Réutiliser des mots de passe est l\'un des risques de sécurité les plus courants. Générez des mots de passe uniques et forts pour chaque service — directement dans votre navigateur.' },
@@ -662,7 +772,7 @@ export const translations: Record<string, Translation> = {
       'tal-till-text': { name: 'Parole en texte', description: 'Convertir l\'audio parlé en texte écrit' },
       'regex-testare': { name: 'Testeur de regex', description: 'Tester et déboguer des expressions régulières', hint: 'Écrivez un motif regex et voyez les correspondances surlignées en direct dans votre texte. Affiche les groupes de capture et l\'index — parfait pour construire et déboguer des motifs.' },
       'bildkomprimering': { name: "Compression d'images", description: 'Compresser des images sans perte de qualité' },
-      'markdown-forhandsgranskning': { name: 'Aperçu Markdown', description: 'Prévisualiser et éditer du texte Markdown' },
+      'markdown-forhandsgranskning': { name: 'Aperçu Markdown', description: 'Prévisualiser et éditer du texte Markdown', hint: 'Écrivez du Markdown et voyez le résultat en direct. Parfait pour les fichiers README, la documentation ou les articles de blog — avec vue partagée et export HTML.' },
       'mediakonverterare': { name: 'Convertisseur multimédia', description: 'Convertir entre formats audio et vidéo — MP4, MP3, WAV, WebM, OGG et plus' },
       'brodyrkortsvisare': { name: 'Visionneuse de broderie', description: 'Afficher et prévisualiser des motifs de broderie aux formats PES, DST, JEF et autres' },
     },
@@ -778,14 +888,36 @@ export const translations: Record<string, Translation> = {
       history: 'Verlauf',
       clear: 'Löschen',
     },
+    unitConverter: {
+      length: 'Länge',
+      weight: 'Gewicht',
+      temperature: 'Temperatur',
+      speed: 'Geschwindigkeit',
+      data: 'Daten',
+    },
+    colorPalette: {
+      addColor: 'Farbe hinzufügen',
+      randomize: 'Zufällig',
+      copyAll: 'Alle kopieren',
+      copied: 'Kopiert!',
+    },
+    markdownPreview: {
+      edit: 'Bearbeiten',
+      split: 'Geteilt',
+      preview: 'Vorschau',
+      copyHtml: 'HTML kopieren',
+      copied: 'Kopiert!',
+      clear: 'Löschen',
+      placeholder: 'Markdown hier schreiben...',
+    },
     tools: {
       'png-till-svg': { name: 'PNG zu SVG', description: 'PNG-Bilder in SVG-Format konvertieren' },
-      'fargpalett': { name: 'Farbpalette', description: 'Farbpaletten erstellen und verwalten' },
+      'fargpalett': { name: 'Farbpalette', description: 'Farbpaletten erstellen und verwalten', hint: 'Erstellen Sie Farbpaletten für Ihre Projekte. Wählen Sie Farben, sehen Sie HEX/RGB/HSL-Werte und kopieren Sie sie direkt.' },
       'filanalys': { name: 'Dateianalyse', description: 'Dateiinhalte und Metadaten analysieren' },
       'qr-kod': { name: 'QR-Code', description: 'QR-Codes generieren und scannen', hint: 'Erstellen Sie QR-Codes für URLs, WLAN-Passwörter oder beliebigen Text. Wählen Sie Farben und Größe, laden Sie als PNG herunter — alles geschieht lokal in Ihrem Browser.' },
       'base64-kodare': { name: 'Base64-Kodierer', description: 'Base64-Text kodieren und dekodieren', hint: 'Base64 wird verwendet, um Daten in URLs, E-Mails und API-Aufrufen einzubetten. Praktisch beim Debuggen oder wenn Binärdaten als Text gesendet werden müssen.' },
       'linjal': { name: 'Lineal', description: 'Abstände auf dem Bildschirm messen' },
-      'enhetsomvandlare': { name: 'Einheitenumrechner', description: 'Zwischen verschiedenen Maßeinheiten umrechnen' },
+      'enhetsomvandlare': { name: 'Einheitenumrechner', description: 'Zwischen verschiedenen Maßeinheiten umrechnen', hint: 'Schnell zwischen metrischen und imperialen Einheiten umrechnen — Länge, Gewicht, Temperatur, Geschwindigkeit und Datengröße.' },
       'tidszoner': { name: 'Zeitzonen', description: 'Zeit in verschiedenen Zeitzonen vergleichen' },
       'hash-generator': { name: 'Hash-Generator', description: 'MD5, SHA-256 und andere Hash-Werte generieren', hint: 'Überprüfen Sie die Dateiintegrität oder vergleichen Sie Checksummen. Hashes werden überall in der Sicherheit, Git und bei der Download-Validierung verwendet.' },
       'losenordsgenerator': { name: 'Passwort-Generator', description: 'Starke und sichere Passwörter erstellen', hint: 'Passwörter wiederzuverwenden ist eines der häufigsten Sicherheitsrisiken. Generieren Sie einzigartige, starke Passwörter für jeden Dienst — direkt im Browser ohne Daten zu senden.' },
@@ -799,7 +931,7 @@ export const translations: Record<string, Translation> = {
       'tal-till-text': { name: 'Sprache zu Text', description: 'Gesprochenes Audio in geschriebenen Text umwandeln' },
       'regex-testare': { name: 'Regex-Tester', description: 'Reguläre Ausdrücke testen und debuggen', hint: 'Schreiben Sie ein Regex-Muster und sehen Sie Treffer live in Ihrem Text hervorgehoben. Zeigt Erfassungsgruppen und Index — perfekt zum Erstellen und Debuggen von Mustern.' },
       'bildkomprimering': { name: 'Bildkomprimierung', description: 'Bilder ohne Qualitätsverlust komprimieren' },
-      'markdown-forhandsgranskning': { name: 'Markdown-Vorschau', description: 'Markdown-Text anzeigen und bearbeiten' },
+      'markdown-forhandsgranskning': { name: 'Markdown-Vorschau', description: 'Markdown-Text anzeigen und bearbeiten', hint: 'Schreiben Sie Markdown und sehen Sie das Ergebnis live. Perfekt für README-Dateien, Dokumentation oder Blog-Posts — mit geteilter Ansicht und HTML-Export.' },
       'mediakonverterare': { name: 'Medienkonverter', description: 'Zwischen Audio- und Videoformaten konvertieren — MP4, MP3, WAV, WebM, OGG und mehr' },
       'brodyrkortsvisare': { name: 'Stickdatei-Betrachter', description: 'Stickmuster aus PES, DST, JEF und anderen Formaten anzeigen und vorab ansehen' },
     },
@@ -915,14 +1047,36 @@ export const translations: Record<string, Translation> = {
       history: 'Histórico',
       clear: 'Limpar',
     },
+    unitConverter: {
+      length: 'Comprimento',
+      weight: 'Peso',
+      temperature: 'Temperatura',
+      speed: 'Velocidade',
+      data: 'Dados',
+    },
+    colorPalette: {
+      addColor: 'Adicionar cor',
+      randomize: 'Aleatório',
+      copyAll: 'Copiar todos',
+      copied: 'Copiado!',
+    },
+    markdownPreview: {
+      edit: 'Editar',
+      split: 'Dividido',
+      preview: 'Pré-visualização',
+      copyHtml: 'Copiar HTML',
+      copied: 'Copiado!',
+      clear: 'Limpar',
+      placeholder: 'Escreva Markdown aqui...',
+    },
     tools: {
       'png-till-svg': { name: 'PNG para SVG', description: 'Converter imagens PNG para formato SVG' },
-      'fargpalett': { name: 'Paleta de cores', description: 'Criar e gerenciar paletas de cores' },
+      'fargpalett': { name: 'Paleta de cores', description: 'Criar e gerenciar paletas de cores', hint: 'Crie paletas de cores para seus projetos. Escolha cores com um seletor, veja valores HEX/RGB/HSL e copie-os diretamente.' },
       'filanalys': { name: 'Análise de arquivos', description: 'Analisar conteúdo e metadados de arquivos' },
       'qr-kod': { name: 'Código QR', description: 'Gerar e escanear códigos QR', hint: 'Crie códigos QR para URLs, senhas Wi-Fi ou qualquer texto. Escolha cores e tamanho, baixe como PNG — tudo acontece localmente no seu navegador.' },
       'base64-kodare': { name: 'Codificador Base64', description: 'Codificar e decodificar texto Base64', hint: 'Base64 é usado para incorporar dados em URLs, e-mails e chamadas de API. Útil para depuração ou quando você precisa enviar dados binários como texto.' },
       'linjal': { name: 'Régua', description: 'Medir distâncias na tela' },
-      'enhetsomvandlare': { name: 'Conversor de unidades', description: 'Converter entre diferentes unidades de medida' },
+      'enhetsomvandlare': { name: 'Conversor de unidades', description: 'Converter entre diferentes unidades de medida', hint: 'Converta rapidamente entre unidades métricas e imperiais — comprimento, peso, temperatura, velocidade e tamanho de dados.' },
       'tidszoner': { name: 'Fusos horários', description: 'Comparar horários em diferentes fusos horários' },
       'hash-generator': { name: 'Gerador de hash', description: 'Gerar valores MD5, SHA-256 e outros hashes', hint: 'Verifique a integridade de arquivos ou compare checksums. Hashes são usados em segurança, Git e validação de downloads.' },
       'losenordsgenerator': { name: 'Gerador de senhas', description: 'Criar senhas fortes e seguras', hint: 'Reutilizar senhas é um dos riscos de segurança mais comuns. Gere senhas únicas e fortes para cada serviço — diretamente no navegador sem enviar dados a lugar nenhum.' },
@@ -936,7 +1090,7 @@ export const translations: Record<string, Translation> = {
       'tal-till-text': { name: 'Fala para texto', description: 'Converter áudio falado em texto escrito' },
       'regex-testare': { name: 'Testador de regex', description: 'Testar e depurar expressões regulares', hint: 'Escreva um padrão regex e veja as correspondências destacadas ao vivo no seu texto. Mostra grupos de captura e índice — perfeito para construir e depurar padrões.' },
       'bildkomprimering': { name: 'Compressão de imagens', description: 'Comprimir imagens sem perder qualidade' },
-      'markdown-forhandsgranskning': { name: 'Pré-visualização Markdown', description: 'Pré-visualizar e editar texto Markdown' },
+      'markdown-forhandsgranskning': { name: 'Pré-visualização Markdown', description: 'Pré-visualizar e editar texto Markdown', hint: 'Escreva Markdown e veja o resultado ao vivo. Perfeito para arquivos README, documentação ou posts de blog — com vista dividida e exportação HTML.' },
       'mediakonverterare': { name: 'Conversor de mídia', description: 'Converter entre formatos de áudio e vídeo — MP4, MP3, WAV, WebM, OGG e mais' },
       'brodyrkortsvisare': { name: 'Visualizador de bordado', description: 'Visualizar e pré-visualizar padrões de bordado em formatos PES, DST, JEF e outros' },
     },

@@ -11,6 +11,9 @@ import HashGenerator from './pages/tools/HashGenerator'
 import RegexTester from './pages/tools/RegexTester'
 import QrCodeTool from './pages/tools/QrCode'
 import KeyboardTester from './pages/tools/KeyboardTester'
+import UnitConverter from './pages/tools/UnitConverter'
+import ColorPalette from './pages/tools/ColorPalette'
+import MarkdownPreview from './pages/tools/MarkdownPreview'
 
 export default function App() {
   return (
@@ -26,6 +29,9 @@ export default function App() {
         <Route path="/regex-testare" element={<RegexTester />} />
         <Route path="/qr-kod" element={<QrCodeTool />} />
         <Route path="/tangentbordstest" element={<KeyboardTester />} />
+        <Route path="/enhetsomvandlare" element={<UnitConverter />} />
+        <Route path="/fargpalett" element={<ColorPalette />} />
+        <Route path="/markdown-forhandsgranskning" element={<MarkdownPreview />} />
         <Route path="/:slug" element={<Placeholder />} />
       </Route>
     </Routes>

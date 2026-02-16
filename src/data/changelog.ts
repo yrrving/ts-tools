@@ -10,6 +10,53 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '0.7.0',
+    date: '2026-02-16',
+    title: {
+      sv: 'Enheter, Färger & Markdown',
+      en: 'Units, Colors & Markdown',
+      es: 'Unidades, Colores y Markdown',
+      fr: 'Unités, Couleurs & Markdown',
+      de: 'Einheiten, Farben & Markdown',
+      pt: 'Unidades, Cores e Markdown',
+    },
+    changes: [
+      {
+        type: 'added',
+        text: {
+          sv: 'Enhetsomvandlare med längd, vikt, temperatur, hastighet och datastorlek',
+          en: 'Unit converter with length, weight, temperature, speed and data size',
+          es: 'Conversor de unidades con longitud, peso, temperatura, velocidad y tamaño de datos',
+          fr: 'Convertisseur d\'unités avec longueur, poids, température, vitesse et taille des données',
+          de: 'Einheitenumrechner mit Länge, Gewicht, Temperatur, Geschwindigkeit und Datengröße',
+          pt: 'Conversor de unidades com comprimento, peso, temperatura, velocidade e tamanho de dados',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Färgpalett med color picker, HEX/RGB/HSL-värden, slumpa och kopiera',
+          en: 'Color palette with color picker, HEX/RGB/HSL values, randomize and copy',
+          es: 'Paleta de colores con selector, valores HEX/RGB/HSL, aleatorio y copiar',
+          fr: 'Palette de couleurs avec sélecteur, valeurs HEX/RGB/HSL, aléatoire et copier',
+          de: 'Farbpalette mit Color Picker, HEX/RGB/HSL-Werten, Zufall und Kopieren',
+          pt: 'Paleta de cores com seletor, valores HEX/RGB/HSL, aleatório e copiar',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Markdown-förhandsgranskning med delad vy, live-rendering och HTML-export',
+          en: 'Markdown preview with split view, live rendering and HTML export',
+          es: 'Vista previa de Markdown con vista dividida, renderizado en vivo y exportación HTML',
+          fr: 'Aperçu Markdown avec vue partagée, rendu en direct et export HTML',
+          de: 'Markdown-Vorschau mit geteilter Ansicht, Live-Rendering und HTML-Export',
+          pt: 'Pré-visualização Markdown com vista dividida, renderização ao vivo e exportação HTML',
+        },
+      },
+    ],
+  },
+  {
     version: '0.6.0',
     date: '2026-02-16',
     title: {
