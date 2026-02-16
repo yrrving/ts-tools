@@ -10,6 +10,53 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '0.6.0',
+    date: '2026-02-16',
+    title: {
+      sv: 'QR, Regex & Tangentbord',
+      en: 'QR, Regex & Keyboard',
+      es: 'QR, Regex y Teclado',
+      fr: 'QR, Regex & Clavier',
+      de: 'QR, Regex & Tastatur',
+      pt: 'QR, Regex e Teclado',
+    },
+    changes: [
+      {
+        type: 'added',
+        text: {
+          sv: 'Tre nya verktyg: QR-kodgenerator, Regex-testare, Tangentbordstest',
+          en: 'Three new tools: QR Code Generator, Regex Tester, Keyboard Tester',
+          es: 'Tres nuevas herramientas: Generador de QR, Probador de regex, Test de teclado',
+          fr: 'Trois nouveaux outils : Générateur de QR, Testeur de regex, Test de clavier',
+          de: 'Drei neue Werkzeuge: QR-Code-Generator, Regex-Tester, Tastaturtest',
+          pt: 'Três novas ferramentas: Gerador de QR, Testador de regex, Teste de teclado',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'QR-kodgenerator med anpassningsbara färger, storlek och PNG-nedladdning',
+          en: 'QR code generator with customizable colors, size and PNG download',
+          es: 'Generador de códigos QR con colores personalizables, tamaño y descarga PNG',
+          fr: 'Générateur de codes QR avec couleurs personnalisables, taille et téléchargement PNG',
+          de: 'QR-Code-Generator mit anpassbaren Farben, Größe und PNG-Download',
+          pt: 'Gerador de códigos QR com cores personalizáveis, tamanho e download PNG',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Regex-testare med live-matchning, flaggor och fångstgrupper',
+          en: 'Regex tester with live matching, flags and capture groups',
+          es: 'Probador de regex con coincidencias en vivo, banderas y grupos de captura',
+          fr: 'Testeur de regex avec correspondance en direct, drapeaux et groupes de capture',
+          de: 'Regex-Tester mit Live-Matching, Flags und Erfassungsgruppen',
+          pt: 'Testador de regex com correspondência ao vivo, flags e grupos de captura',
+        },
+      },
+    ],
+  },
+  {
     version: '0.5.0',
     date: '2026-02-13',
     title: {
