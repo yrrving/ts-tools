@@ -17,6 +17,15 @@ import MarkdownPreview from './pages/tools/MarkdownPreview'
 import ImageCompressor from './pages/tools/ImageCompressor'
 import TimeZones from './pages/tools/TimeZones'
 import FileAnalyzer from './pages/tools/FileAnalyzer'
+import IpInfo from './pages/tools/IpInfo'
+import TextToSpeech from './pages/tools/TextToSpeech'
+import SpeechToText from './pages/tools/SpeechToText'
+import PngToSvg from './pages/tools/PngToSvg'
+import RulerTool from './pages/tools/RulerTool'
+import Translator from './pages/tools/Translator'
+import BandwidthTest from './pages/tools/BandwidthTest'
+import MediaConverter from './pages/tools/MediaConverter'
+import EmbroideryViewer from './pages/tools/EmbroideryViewer'
 
 export default function App() {
   return (
@@ -38,6 +47,15 @@ export default function App() {
         <Route path="/bildkomprimering" element={<ImageCompressor />} />
         <Route path="/tidszoner" element={<TimeZones />} />
         <Route path="/filanalys" element={<FileAnalyzer />} />
+        <Route path="/ip-info" element={<IpInfo />} />
+        <Route path="/text-till-tal" element={<TextToSpeech />} />
+        <Route path="/tal-till-text" element={<SpeechToText />} />
+        <Route path="/png-till-svg" element={<PngToSvg />} />
+        <Route path="/linjal" element={<RulerTool />} />
+        <Route path="/oversattare" element={<Translator />} />
+        <Route path="/bandbreddstest" element={<BandwidthTest />} />
+        <Route path="/mediakonverterare" element={<MediaConverter />} />
+        <Route path="/brodyrkortsvisare" element={<EmbroideryViewer />} />
         <Route path="/:slug" element={<Placeholder />} />
       </Route>
     </Routes>

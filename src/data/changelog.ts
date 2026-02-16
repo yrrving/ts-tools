@@ -10,6 +10,97 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '0.9.0',
+    date: '2026-02-16',
+    title: {
+      sv: 'Sex nya verktyg: Översättare, Bandbreddstest, Linjal, PNG till SVG, Mediakonverterare & Brodyrkortsvisare',
+      en: 'Six new tools: Translator, Bandwidth Test, Ruler, PNG to SVG, Media Converter & Embroidery Viewer',
+      es: 'Seis nuevas herramientas: Traductor, Test de ancho de banda, Regla, PNG a SVG, Conversor de medios y Visor de bordado',
+      fr: 'Six nouveaux outils : Traducteur, Test de bande passante, Règle, PNG vers SVG, Convertisseur multimédia et Visionneuse de broderie',
+      de: 'Sechs neue Werkzeuge: Übersetzer, Bandbreitentest, Lineal, PNG zu SVG, Medienkonverter & Stickdatei-Betrachter',
+      pt: 'Seis novas ferramentas: Tradutor, Teste de largura de banda, Régua, PNG para SVG, Conversor de mídia e Visualizador de bordado',
+    },
+    changes: [
+      {
+        type: 'added',
+        text: {
+          sv: 'Översättare med stöd för 19 språk, språkbyte och kopiering',
+          en: 'Translator with support for 19 languages, language swap and copy',
+          es: 'Traductor con soporte para 19 idiomas, intercambio de idiomas y copia',
+          fr: 'Traducteur avec prise en charge de 19 langues, échange de langues et copie',
+          de: 'Übersetzer mit Unterstützung für 19 Sprachen, Sprachwechsel und Kopieren',
+          pt: 'Tradutor com suporte para 19 idiomas, troca de idiomas e cópia',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Bandbreddstest med nedladdningshastighet, latens, visuell mätare och historik',
+          en: 'Bandwidth test with download speed, latency, visual gauge and history',
+          es: 'Test de ancho de banda con velocidad de descarga, latencia, indicador visual e historial',
+          fr: 'Test de bande passante avec vitesse de téléchargement, latence, jauge visuelle et historique',
+          de: 'Bandbreitentest mit Download-Geschwindigkeit, Latenz, visueller Anzeige und Verlauf',
+          pt: 'Teste de largura de banda com velocidade de download, latência, indicador visual e histórico',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Linjal med cm/tum, kalibrering via kreditkort och klicka-dra-mätning',
+          en: 'Ruler with cm/inch, credit card calibration and click-drag measurement',
+          es: 'Regla con cm/pulgadas, calibración con tarjeta de crédito y medición por arrastre',
+          fr: 'Règle avec cm/pouces, calibration par carte bancaire et mesure par glisser-déposer',
+          de: 'Lineal mit cm/Zoll, Kreditkarten-Kalibrierung und Klick-Zieh-Messung',
+          pt: 'Régua com cm/polegadas, calibração com cartão de crédito e medição por arrastar',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'PNG till SVG med svartvitt/färgläge, tröskel och upplösningsreglage',
+          en: 'PNG to SVG with black & white/color mode, threshold and resolution controls',
+          es: 'PNG a SVG con modo blanco y negro/color, umbral y controles de resolución',
+          fr: 'PNG vers SVG avec mode noir et blanc/couleur, seuil et contrôles de résolution',
+          de: 'PNG zu SVG mit Schwarz-Weiß/Farbmodus, Schwellenwert und Auflösungsreglern',
+          pt: 'PNG para SVG com modo preto e branco/cor, limiar e controles de resolução',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Mediakonverterare med WAV, WebM och ljudextraktion — allt lokalt i webbläsaren',
+          en: 'Media converter with WAV, WebM and audio extraction — all local in browser',
+          es: 'Conversor de medios con WAV, WebM y extracción de audio — todo local en el navegador',
+          fr: 'Convertisseur multimédia avec WAV, WebM et extraction audio — tout local dans le navigateur',
+          de: 'Medienkonverter mit WAV, WebM und Audioextraktion — alles lokal im Browser',
+          pt: 'Conversor de mídia com WAV, WebM e extração de áudio — tudo local no navegador',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Brodyrkortsvisare för PES- och DST-filer med trådfärger, stygnantal och zoom',
+          en: 'Embroidery viewer for PES and DST files with thread colors, stitch count and zoom',
+          es: 'Visor de bordado para archivos PES y DST con colores de hilo, conteo de puntadas y zoom',
+          fr: 'Visionneuse de broderie pour fichiers PES et DST avec couleurs de fil, nombre de points et zoom',
+          de: 'Stickdatei-Betrachter für PES- und DST-Dateien mit Fadenfarben, Stichanzahl und Zoom',
+          pt: 'Visualizador de bordado para arquivos PES e DST com cores de linha, contagem de pontos e zoom',
+        },
+      },
+      {
+        type: 'added',
+        text: {
+          sv: 'Beskrivande hints tillagda för alla nya verktyg på alla 6 språk',
+          en: 'Descriptive hints added for all new tools in all 6 languages',
+          es: 'Descripciones añadidas para todas las nuevas herramientas en los 6 idiomas',
+          fr: 'Descriptions ajoutées pour tous les nouveaux outils dans les 6 langues',
+          de: 'Beschreibende Hinweise für alle neuen Werkzeuge in allen 6 Sprachen hinzugefügt',
+          pt: 'Descrições adicionadas para todas as novas ferramentas nos 6 idiomas',
+        },
+      },
+    ],
+  },
+  {
     version: '0.8.0',
     date: '2026-02-16',
     title: {
