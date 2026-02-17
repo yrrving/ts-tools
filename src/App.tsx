@@ -26,6 +26,37 @@ import Translator from './pages/tools/Translator'
 import BandwidthTest from './pages/tools/BandwidthTest'
 import MediaConverter from './pages/tools/MediaConverter'
 import EmbroideryViewer from './pages/tools/EmbroideryViewer'
+import Calculator from './pages/tools/Calculator'
+import PercentCalc from './pages/tools/PercentCalc'
+import RandomNumber from './pages/tools/RandomNumber'
+import Stopwatch from './pages/tools/Stopwatch'
+import CountdownTimer from './pages/tools/CountdownTimer'
+import PomodoroTimer from './pages/tools/PomodoroTimer'
+import Notepad from './pages/tools/Notepad'
+import RandomPicker from './pages/tools/RandomPicker'
+import LoremIpsum from './pages/tools/LoremIpsum'
+import Metronome from './pages/tools/Metronome'
+import UserAgentInfo from './pages/tools/UserAgentInfo'
+import JwtDecoder from './pages/tools/JwtDecoder'
+import CronParser from './pages/tools/CronParser'
+import CsvJson from './pages/tools/CsvJson'
+import DiffCompare from './pages/tools/DiffCompare'
+import WhiteNoise from './pages/tools/WhiteNoise'
+import PitchDetector from './pages/tools/PitchDetector'
+import CodeMinifier from './pages/tools/CodeMinifier'
+import CssGradient from './pages/tools/CssGradient'
+import AsciiArt from './pages/tools/AsciiArt'
+import DnsLookup from './pages/tools/DnsLookup'
+import SslCheck from './pages/tools/SslCheck'
+import HttpHeaders from './pages/tools/HttpHeaders'
+import FaviconGenerator from './pages/tools/FaviconGenerator'
+import ImageCropper from './pages/tools/ImageCropper'
+import ImageCollage from './pages/tools/ImageCollage'
+import PixelCounter from './pages/tools/PixelCounter'
+import CutFileGenerator from './pages/tools/CutFileGenerator'
+import PdfTools from './pages/tools/PdfTools'
+import OcrTool from './pages/tools/OcrTool'
+import BackgroundRemover from './pages/tools/BackgroundRemover'
 
 export default function App() {
   return (
@@ -56,6 +87,37 @@ export default function App() {
         <Route path="/bandbreddstest" element={<BandwidthTest />} />
         <Route path="/mediakonverterare" element={<MediaConverter />} />
         <Route path="/brodyrkortsvisare" element={<EmbroideryViewer />} />
+        <Route path="/miniraknare" element={<Calculator />} />
+        <Route path="/procent-raknare" element={<PercentCalc />} />
+        <Route path="/slumptalsgenerator" element={<RandomNumber />} />
+        <Route path="/stoppur" element={<Stopwatch />} />
+        <Route path="/nedrakningstimer" element={<CountdownTimer />} />
+        <Route path="/pomodoro-timer" element={<PomodoroTimer />} />
+        <Route path="/anteckningsblock" element={<Notepad />} />
+        <Route path="/slumpmassigt-val" element={<RandomPicker />} />
+        <Route path="/lorem-ipsum" element={<LoremIpsum />} />
+        <Route path="/metronom" element={<Metronome />} />
+        <Route path="/useragent-info" element={<UserAgentInfo />} />
+        <Route path="/jwt-dekodare" element={<JwtDecoder />} />
+        <Route path="/cron-tolkare" element={<CronParser />} />
+        <Route path="/csv-json" element={<CsvJson />} />
+        <Route path="/diff-jamforare" element={<DiffCompare />} />
+        <Route path="/vit-brus" element={<WhiteNoise />} />
+        <Route path="/tonhojdsmatare" element={<PitchDetector />} />
+        <Route path="/kodminifierare" element={<CodeMinifier />} />
+        <Route path="/css-gradient" element={<CssGradient />} />
+        <Route path="/ascii-konst" element={<AsciiArt />} />
+        <Route path="/dns-uppslagning" element={<DnsLookup />} />
+        <Route path="/ssl-kontroll" element={<SslCheck />} />
+        <Route path="/http-headers" element={<HttpHeaders />} />
+        <Route path="/favicon-generator" element={<FaviconGenerator />} />
+        <Route path="/bildbeskärare" element={<ImageCropper />} />
+        <Route path="/bildkollage" element={<ImageCollage />} />
+        <Route path="/pixelraknare" element={<PixelCounter />} />
+        <Route path="/skarfilsgenerator" element={<CutFileGenerator />} />
+        <Route path="/pdf-verktyg" element={<PdfTools />} />
+        <Route path="/ocr" element={<OcrTool />} />
+        <Route path="/bakgrundsborttagare" element={<BackgroundRemover />} />
         <Route path="/:slug" element={<Placeholder />} />
       </Route>
     </Routes>

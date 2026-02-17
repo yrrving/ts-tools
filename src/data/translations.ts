@@ -214,6 +214,285 @@ export interface Translation {
     empty: string
     notSupported: string
   }
+  calculator?: {
+    error: string
+  }
+  percentCalc?: {
+    modeOf: string
+    modeIs: string
+    modeChange: string
+    percent: string
+    value: string
+    total: string
+    from: string
+    to: string
+    result: string
+  }
+  randomNumber?: {
+    min: string
+    max: string
+    count: string
+    generate: string
+    copy: string
+    copied: string
+  }
+  stopwatch?: {
+    start: string
+    stop: string
+    reset: string
+    lap: string
+    laps: string
+  }
+  countdown?: {
+    hours: string
+    minutes: string
+    seconds: string
+    start: string
+    pause: string
+    resume: string
+    reset: string
+    finished: string
+  }
+  pomodoro?: {
+    work: string
+    break: string
+    start: string
+    pause: string
+    reset: string
+    sessions: string
+  }
+  notepad?: {
+    placeholder: string
+    words: string
+    characters: string
+    clear: string
+    autoSaved: string
+  }
+  randomPicker?: {
+    listMode: string
+    coinFlip: string
+    placeholder: string
+    choose: string
+    flip: string
+    heads: string
+    tails: string
+  }
+  loremIpsum?: {
+    paragraphs: string
+    sentences: string
+    words: string
+    count: string
+    generate: string
+    copy: string
+    copied: string
+  }
+  metronome?: {
+    start: string
+    stop: string
+    tapTempo: string
+  }
+  userAgent?: {
+    browser: string
+    os: string
+    device: string
+    platform: string
+    language: string
+    screen: string
+    window: string
+    colorDepth: string
+    pixelRatio: string
+    touch: string
+    cores: string
+    cookies: string
+    onlineStatus: string
+    copy: string
+    copied: string
+    yes: string
+    no: string
+  }
+  jwtDecoder?: {
+    input: string
+    placeholder: string
+    invalid: string
+    signature: string
+    issuedAt: string
+    expires: string
+    notBefore: string
+  }
+  cronParser?: {
+    expression: string
+    meaning: string
+    examples: string
+    minute: string
+    hour: string
+    dayOfMonth: string
+    month: string
+    dayOfWeek: string
+    every: string
+    at: string
+    minuteLabel: string
+    minutesLabel: string
+    hourLabel: string
+    hoursLabel: string
+    dayLabel: string
+    on: string
+    inMonth: string
+    onDay: string
+  }
+  csvJson?: {
+    input: string
+    output: string
+    convert: string
+    copy: string
+    copied: string
+    error: string
+    csvPlaceholder: string
+    jsonPlaceholder: string
+  }
+  diffCompare?: {
+    original: string
+    modified: string
+    placeholderA: string
+    placeholderB: string
+    compare: string
+    linesAdded: string
+    linesRemoved: string
+  }
+  whiteNoise?: {
+    white: string
+    pink: string
+    brown: string
+    volume: string
+    play: string
+    stop: string
+  }
+  pitchDetector?: {
+    start: string
+    stop: string
+    detecting: string
+    pressStart: string
+    notSupported: string
+  }
+  codeMinifier?: {
+    placeholder: string
+    minify: string
+    copy: string
+    copied: string
+    saved: string
+  }
+  cssGradient?: {
+    linear: string
+    radial: string
+    angle: string
+    colors: string
+    addColor: string
+    presets: string
+  }
+  asciiArt?: {
+    upload: string
+    widthLabel: string
+    standard: string
+    detailed: string
+    blocks: string
+    copy: string
+    copied: string
+  }
+  dnsLookup?: {
+    domainLabel: string
+    typeLabel: string
+    lookup: string
+    looking: string
+    results: string
+    noResults: string
+    noRecords: string
+    error: string
+    placeholder: string
+    search: string
+    loading: string
+  }
+  sslCheck?: {
+    domainLabel: string
+    check: string
+    checking: string
+    valid: string
+    invalid: string
+    issuer: string
+    expires: string
+    error: string
+    placeholder: string
+    loading: string
+    unknownIssuer: string
+    daysLeft: string
+    subject: string
+    validFrom: string
+    validTo: string
+    protocol: string
+  }
+  httpHeaders?: {
+    urlLabel: string
+    fetch: string
+    fetching: string
+    headers: string
+    error: string
+    placeholder: string
+    loading: string
+    copied: string
+    copyAll: string
+  }
+  faviconGenerator?: {
+    upload: string
+    downloadIco: string
+  }
+  imageCropper?: {
+    upload: string
+    free: string
+    crop: string
+    newImage: string
+    download: string
+  }
+  imageCollage?: {
+    gap: string
+    images: string
+    generate: string
+    download: string
+  }
+  pixelCounter?: {
+    upload: string
+    dimensions: string
+    totalPixels: string
+    distance: string
+    newImage: string
+  }
+  cutFileGenerator?: {
+    upload: string
+    threshold: string
+    offset: string
+    generate: string
+    downloadSvg: string
+  }
+  pdfTools?: {
+    upload: string
+    files: string
+    merge: string
+    merging: string
+    download: string
+  }
+  ocrTool?: {
+    upload: string
+    extract: string
+    processing: string
+    result: string
+    noText: string
+    copy: string
+    copied: string
+  }
+  backgroundRemover?: {
+    upload: string
+    tolerance: string
+    remove: string
+    processing: string
+    download: string
+  }
   tools: Record<string, ToolTranslation>
 }
 
@@ -390,6 +669,285 @@ export const translations: Record<string, Translation> = {
       dimensions: 'Dimensioner',
       preview: 'Förhandsgranskning',
       contentPreview: 'Innehåll (förhandsgranskning)',
+    },
+    calculator: {
+      error: 'Fel',
+    },
+    percentCalc: {
+      modeOf: 'X% av Y',
+      modeIs: 'X är ?% av Y',
+      modeChange: '% förändring',
+      percent: 'Procent',
+      value: 'Värde',
+      total: 'Totalt',
+      from: 'Från',
+      to: 'Till',
+      result: 'Resultat',
+    },
+    randomNumber: {
+      min: 'Min',
+      max: 'Max',
+      count: 'Antal',
+      generate: 'Generera',
+      copy: 'Kopiera',
+      copied: 'Kopierat!',
+    },
+    stopwatch: {
+      start: 'Start',
+      stop: 'Stopp',
+      reset: 'Nollställ',
+      lap: 'Varv',
+      laps: 'Varv',
+    },
+    countdown: {
+      hours: 'Tim',
+      minutes: 'Min',
+      seconds: 'Sek',
+      start: 'Starta',
+      pause: 'Paus',
+      resume: 'Fortsätt',
+      reset: 'Nollställ',
+      finished: 'Tiden är ute!',
+    },
+    pomodoro: {
+      work: 'Arbete',
+      break: 'Paus',
+      start: 'Starta',
+      pause: 'Paus',
+      reset: 'Nollställ',
+      sessions: 'Sessioner',
+    },
+    notepad: {
+      placeholder: 'Skriv dina anteckningar här...',
+      words: 'Ord',
+      characters: 'Tecken',
+      clear: 'Rensa',
+      autoSaved: 'Sparas automatiskt i webbläsaren',
+    },
+    randomPicker: {
+      listMode: 'Lista',
+      coinFlip: 'Myntkast',
+      placeholder: 'Skriv ett alternativ per rad...',
+      choose: 'Välj',
+      flip: 'Kasta',
+      heads: 'Krona',
+      tails: 'Klave',
+    },
+    loremIpsum: {
+      paragraphs: 'Stycken',
+      sentences: 'Meningar',
+      words: 'Ord',
+      count: 'Antal',
+      generate: 'Generera',
+      copy: 'Kopiera',
+      copied: 'Kopierat!',
+    },
+    metronome: {
+      start: 'Starta',
+      stop: 'Stoppa',
+      tapTempo: 'Tap tempo',
+    },
+    userAgent: {
+      browser: 'Webbläsare',
+      os: 'Operativsystem',
+      device: 'Enhetstyp',
+      platform: 'Plattform',
+      language: 'Språk',
+      screen: 'Skärmupplösning',
+      window: 'Fönsterstorlek',
+      colorDepth: 'Färgdjup',
+      pixelRatio: 'Pixelförhållande',
+      touch: 'Pekskärm',
+      cores: 'CPU-kärnor',
+      cookies: 'Cookies',
+      onlineStatus: 'Online',
+      copy: 'Kopiera',
+      copied: 'Kopierat!',
+      yes: 'Ja',
+      no: 'Nej',
+    },
+    jwtDecoder: {
+      input: 'JWT-token',
+      placeholder: 'Klistra in en JWT-token här...',
+      invalid: 'Ogiltig JWT-token',
+      signature: 'Signatur',
+      issuedAt: 'Utfärdat',
+      expires: 'Utgår',
+      notBefore: 'Ej före',
+    },
+    cronParser: {
+      expression: 'Cron-uttryck',
+      meaning: 'Betydelse',
+      examples: 'Exempel',
+      minute: 'Minut',
+      hour: 'Timme',
+      dayOfMonth: 'Dag i månaden',
+      month: 'Månad',
+      dayOfWeek: 'Veckodag',
+      every: 'Varje',
+      at: 'Vid',
+      minuteLabel: 'minut',
+      minutesLabel: 'minuter',
+      hourLabel: 'timme',
+      hoursLabel: 'timmar',
+      dayLabel: 'dag',
+      on: 'på',
+      inMonth: 'i',
+      onDay: 'den',
+    },
+    csvJson: {
+      input: 'Indata',
+      output: 'Resultat',
+      convert: 'Konvertera',
+      copy: 'Kopiera',
+      copied: 'Kopierat!',
+      error: 'Konverteringsfel — kontrollera indata',
+      csvPlaceholder: 'namn,ålder,stad\nAnna,28,Stockholm',
+      jsonPlaceholder: '[{"namn":"Anna","ålder":28}]',
+    },
+    diffCompare: {
+      original: 'Original',
+      modified: 'Ändrad',
+      placeholderA: 'Klistra in originaltext...',
+      placeholderB: 'Klistra in ändrad text...',
+      compare: 'Jämför',
+      linesAdded: 'tillagda',
+      linesRemoved: 'borttagna',
+    },
+    whiteNoise: {
+      white: 'Vitt brus',
+      pink: 'Rosa brus',
+      brown: 'Brunt brus',
+      volume: 'Volym',
+      play: 'Spela',
+      stop: 'Stoppa',
+    },
+    pitchDetector: {
+      start: 'Starta',
+      stop: 'Stoppa',
+      detecting: 'Lyssnar...',
+      pressStart: 'Tryck för att börja',
+      notSupported: 'Mikrofon stöds inte i denna webbläsare',
+    },
+    codeMinifier: {
+      placeholder: 'Klistra in kod här...',
+      minify: 'Minifiera',
+      copy: 'Kopiera',
+      copied: 'Kopierat!',
+      saved: 'Sparat',
+    },
+    cssGradient: {
+      linear: 'Linjär',
+      radial: 'Radiell',
+      angle: 'Vinkel',
+      colors: 'Färger',
+      addColor: 'Lägg till',
+      presets: 'Förval',
+    },
+    asciiArt: {
+      upload: 'Klicka eller dra hit en bild',
+      widthLabel: 'Bredd',
+      standard: 'Standard',
+      detailed: 'Detaljerad',
+      blocks: 'Block',
+      copy: 'Kopiera',
+      copied: 'Kopierat!',
+    },
+    dnsLookup: {
+      domainLabel: 'Domännamn',
+      typeLabel: 'Posttyp',
+      lookup: 'Slå upp',
+      looking: 'Söker...',
+      results: 'Resultat',
+      noResults: 'Inga poster hittades',
+      noRecords: 'Inga poster hittades',
+      error: 'Kunde inte slå upp domänen',
+      placeholder: 'example.com',
+      search: 'Sök',
+      loading: 'Söker...',
+    },
+    sslCheck: {
+      domainLabel: 'Domännamn',
+      check: 'Kontrollera',
+      checking: 'Kontrollerar...',
+      valid: 'SSL-certifikatet är giltigt',
+      invalid: 'SSL-certifikatet är ogiltigt',
+      issuer: 'Utfärdare',
+      expires: 'Utgår',
+      error: 'Kunde inte kontrollera SSL',
+      placeholder: 'example.com',
+      loading: 'Kontrollerar...',
+      unknownIssuer: 'Okänd (CORS-begränsning)',
+      daysLeft: 'dagar kvar',
+      subject: 'Domän',
+      validFrom: 'Giltig från',
+      validTo: 'Giltig till',
+      protocol: 'Protokoll',
+    },
+    httpHeaders: {
+      urlLabel: 'URL',
+      fetch: 'Hämta',
+      fetching: 'Hämtar...',
+      headers: 'Headers',
+      error: 'Kunde inte hämta headers',
+      placeholder: 'https://example.com',
+      loading: 'Hämtar...',
+      copied: 'Kopierat!',
+      copyAll: 'Kopiera alla',
+    },
+    faviconGenerator: {
+      upload: 'Klicka eller dra hit en bild',
+      downloadIco: 'Ladda ner favicon.ico',
+    },
+    imageCropper: {
+      upload: 'Klicka eller dra hit en bild',
+      free: 'Fri',
+      crop: 'Beskär',
+      newImage: 'Ny bild',
+      download: 'Ladda ner',
+    },
+    imageCollage: {
+      gap: 'Mellanrum',
+      images: 'bilder',
+      generate: 'Skapa kollage',
+      download: 'Ladda ner',
+    },
+    pixelCounter: {
+      upload: 'Klicka eller dra hit en bild',
+      dimensions: 'Dimensioner',
+      totalPixels: 'Totalt',
+      distance: 'Avstånd',
+      newImage: 'Ny bild',
+    },
+    cutFileGenerator: {
+      upload: 'Klicka eller dra hit en bild',
+      threshold: 'Tröskel',
+      offset: 'Offset (px)',
+      generate: 'Generera skärfil',
+      downloadSvg: 'Ladda ner SVG',
+    },
+    pdfTools: {
+      upload: 'Klicka eller dra hit PDF-filer',
+      files: 'filer',
+      merge: 'Sammanfoga PDF-filer',
+      merging: 'Sammanfogar...',
+      download: 'Ladda ner sammanslagen PDF',
+    },
+    ocrTool: {
+      upload: 'Klicka eller dra hit en bild',
+      extract: 'Extrahera text',
+      processing: 'Analyserar...',
+      result: 'Resultat',
+      noText: 'Ingen text kunde identifieras. Prova en bild med tydlig, mörk text på ljus bakgrund.',
+      copy: 'Kopiera',
+      copied: 'Kopierad!',
+    },
+    backgroundRemover: {
+      upload: 'Klicka eller dra hit en bild',
+      tolerance: 'Tolerans',
+      remove: 'Ta bort bakgrund',
+      processing: 'Bearbetar...',
+      download: 'Ladda ner PNG',
     },
     tools: {
       'png-till-svg': { name: 'PNG till SVG', description: 'Konvertera PNG-bilder till SVG-format', hint: 'Konvertera pixelbilder till skalbar vektorgrafik. Välj svartvitt eller färgläge, justera tröskel och upplösning — allt sker lokalt i webbläsaren.' },
@@ -621,6 +1179,285 @@ export const translations: Record<string, Translation> = {
       preview: 'Preview',
       contentPreview: 'Content (preview)',
     },
+    calculator: {
+      error: 'Error',
+    },
+    percentCalc: {
+      modeOf: 'X% of Y',
+      modeIs: 'X is ?% of Y',
+      modeChange: '% change',
+      percent: 'Percent',
+      value: 'Value',
+      total: 'Total',
+      from: 'From',
+      to: 'To',
+      result: 'Result',
+    },
+    randomNumber: {
+      min: 'Min',
+      max: 'Max',
+      count: 'Count',
+      generate: 'Generate',
+      copy: 'Copy',
+      copied: 'Copied!',
+    },
+    stopwatch: {
+      start: 'Start',
+      stop: 'Stop',
+      reset: 'Reset',
+      lap: 'Lap',
+      laps: 'Laps',
+    },
+    countdown: {
+      hours: 'Hours',
+      minutes: 'Min',
+      seconds: 'Sec',
+      start: 'Start',
+      pause: 'Pause',
+      resume: 'Resume',
+      reset: 'Reset',
+      finished: 'Time\'s up!',
+    },
+    pomodoro: {
+      work: 'Work',
+      break: 'Break',
+      start: 'Start',
+      pause: 'Pause',
+      reset: 'Reset',
+      sessions: 'Sessions',
+    },
+    notepad: {
+      placeholder: 'Write your notes here...',
+      words: 'Words',
+      characters: 'Characters',
+      clear: 'Clear',
+      autoSaved: 'Auto-saved in your browser',
+    },
+    randomPicker: {
+      listMode: 'List',
+      coinFlip: 'Coin flip',
+      placeholder: 'Write one option per line...',
+      choose: 'Choose',
+      flip: 'Flip',
+      heads: 'Heads',
+      tails: 'Tails',
+    },
+    loremIpsum: {
+      paragraphs: 'Paragraphs',
+      sentences: 'Sentences',
+      words: 'Words',
+      count: 'Count',
+      generate: 'Generate',
+      copy: 'Copy',
+      copied: 'Copied!',
+    },
+    metronome: {
+      start: 'Start',
+      stop: 'Stop',
+      tapTempo: 'Tap tempo',
+    },
+    userAgent: {
+      browser: 'Browser',
+      os: 'Operating system',
+      device: 'Device type',
+      platform: 'Platform',
+      language: 'Language',
+      screen: 'Screen resolution',
+      window: 'Window size',
+      colorDepth: 'Color depth',
+      pixelRatio: 'Pixel ratio',
+      touch: 'Touch screen',
+      cores: 'CPU cores',
+      cookies: 'Cookies',
+      onlineStatus: 'Online',
+      copy: 'Copy',
+      copied: 'Copied!',
+      yes: 'Yes',
+      no: 'No',
+    },
+    jwtDecoder: {
+      input: 'JWT token',
+      placeholder: 'Paste a JWT token here...',
+      invalid: 'Invalid JWT token',
+      signature: 'Signature',
+      issuedAt: 'Issued at',
+      expires: 'Expires',
+      notBefore: 'Not before',
+    },
+    cronParser: {
+      expression: 'Cron expression',
+      meaning: 'Meaning',
+      examples: 'Examples',
+      minute: 'Minute',
+      hour: 'Hour',
+      dayOfMonth: 'Day of month',
+      month: 'Month',
+      dayOfWeek: 'Day of week',
+      every: 'Every',
+      at: 'At',
+      minuteLabel: 'minute',
+      minutesLabel: 'minutes',
+      hourLabel: 'hour',
+      hoursLabel: 'hours',
+      dayLabel: 'day',
+      on: 'on',
+      inMonth: 'in',
+      onDay: 'the',
+    },
+    csvJson: {
+      input: 'Input',
+      output: 'Result',
+      convert: 'Convert',
+      copy: 'Copy',
+      copied: 'Copied!',
+      error: 'Conversion error — check your input',
+      csvPlaceholder: 'name,age,city\nAnna,28,Stockholm',
+      jsonPlaceholder: '[{"name":"Anna","age":28}]',
+    },
+    diffCompare: {
+      original: 'Original',
+      modified: 'Modified',
+      placeholderA: 'Paste original text...',
+      placeholderB: 'Paste modified text...',
+      compare: 'Compare',
+      linesAdded: 'added',
+      linesRemoved: 'removed',
+    },
+    whiteNoise: {
+      white: 'White noise',
+      pink: 'Pink noise',
+      brown: 'Brown noise',
+      volume: 'Volume',
+      play: 'Play',
+      stop: 'Stop',
+    },
+    pitchDetector: {
+      start: 'Start',
+      stop: 'Stop',
+      detecting: 'Listening...',
+      pressStart: 'Press to start',
+      notSupported: 'Microphone not supported in this browser',
+    },
+    codeMinifier: {
+      placeholder: 'Paste code here...',
+      minify: 'Minify',
+      copy: 'Copy',
+      copied: 'Copied!',
+      saved: 'Saved',
+    },
+    cssGradient: {
+      linear: 'Linear',
+      radial: 'Radial',
+      angle: 'Angle',
+      colors: 'Colors',
+      addColor: 'Add',
+      presets: 'Presets',
+    },
+    asciiArt: {
+      upload: 'Click or drag an image here',
+      widthLabel: 'Width',
+      standard: 'Standard',
+      detailed: 'Detailed',
+      blocks: 'Blocks',
+      copy: 'Copy',
+      copied: 'Copied!',
+    },
+    dnsLookup: {
+      domainLabel: 'Domain name',
+      typeLabel: 'Record type',
+      lookup: 'Lookup',
+      looking: 'Looking up...',
+      results: 'Results',
+      noResults: 'No records found',
+      noRecords: 'No records found',
+      error: 'Could not look up domain',
+      placeholder: 'example.com',
+      search: 'Search',
+      loading: 'Looking up...',
+    },
+    sslCheck: {
+      domainLabel: 'Domain name',
+      check: 'Check',
+      checking: 'Checking...',
+      valid: 'SSL certificate is valid',
+      invalid: 'SSL certificate is invalid',
+      issuer: 'Issuer',
+      expires: 'Expires',
+      error: 'Could not check SSL',
+      placeholder: 'example.com',
+      loading: 'Checking...',
+      unknownIssuer: 'Unknown (CORS restriction)',
+      daysLeft: 'days left',
+      subject: 'Domain',
+      validFrom: 'Valid from',
+      validTo: 'Valid to',
+      protocol: 'Protocol',
+    },
+    httpHeaders: {
+      urlLabel: 'URL',
+      fetch: 'Fetch',
+      fetching: 'Fetching...',
+      headers: 'Headers',
+      error: 'Could not fetch headers',
+      placeholder: 'https://example.com',
+      loading: 'Fetching...',
+      copied: 'Copied!',
+      copyAll: 'Copy all',
+    },
+    faviconGenerator: {
+      upload: 'Click or drag an image here',
+      downloadIco: 'Download favicon.ico',
+    },
+    imageCropper: {
+      upload: 'Click or drag an image here',
+      free: 'Free',
+      crop: 'Crop',
+      newImage: 'New image',
+      download: 'Download',
+    },
+    imageCollage: {
+      gap: 'Gap',
+      images: 'images',
+      generate: 'Create collage',
+      download: 'Download',
+    },
+    pixelCounter: {
+      upload: 'Click or drag an image here',
+      dimensions: 'Dimensions',
+      totalPixels: 'Total',
+      distance: 'Distance',
+      newImage: 'New image',
+    },
+    cutFileGenerator: {
+      upload: 'Click or drag an image here',
+      threshold: 'Threshold',
+      offset: 'Offset (px)',
+      generate: 'Generate cut file',
+      downloadSvg: 'Download SVG',
+    },
+    pdfTools: {
+      upload: 'Click or drag PDF files here',
+      files: 'files',
+      merge: 'Merge PDF files',
+      merging: 'Merging...',
+      download: 'Download merged PDF',
+    },
+    ocrTool: {
+      upload: 'Click or drag an image here',
+      extract: 'Extract text',
+      processing: 'Analyzing...',
+      result: 'Result',
+      noText: 'No text could be identified. Try an image with clear, dark text on a light background.',
+      copy: 'Copy',
+      copied: 'Copied!',
+    },
+    backgroundRemover: {
+      upload: 'Click or drag an image here',
+      tolerance: 'Tolerance',
+      remove: 'Remove background',
+      processing: 'Processing...',
+      download: 'Download PNG',
+    },
     tools: {
       'png-till-svg': { name: 'PNG to SVG', description: 'Convert PNG images to SVG format', hint: 'Convert pixel images to scalable vector graphics. Choose black & white or color mode, adjust threshold and resolution — everything happens locally in your browser.' },
       'fargpalett': { name: 'Color Palette', description: 'Create and manage color palettes', hint: 'Create color palettes for your projects. Pick colors with a color picker, see HEX/RGB/HSL values and copy them directly.' },
@@ -850,6 +1687,285 @@ export const translations: Record<string, Translation> = {
       dimensions: 'Dimensiones',
       preview: 'Vista previa',
       contentPreview: 'Contenido (vista previa)',
+    },
+    calculator: {
+      error: 'Error',
+    },
+    percentCalc: {
+      modeOf: 'X% de Y',
+      modeIs: 'X es ?% de Y',
+      modeChange: '% de cambio',
+      percent: 'Porcentaje',
+      value: 'Valor',
+      total: 'Total',
+      from: 'De',
+      to: 'A',
+      result: 'Resultado',
+    },
+    randomNumber: {
+      min: 'Min',
+      max: 'Max',
+      count: 'Cantidad',
+      generate: 'Generar',
+      copy: 'Copiar',
+      copied: '¡Copiado!',
+    },
+    stopwatch: {
+      start: 'Iniciar',
+      stop: 'Parar',
+      reset: 'Reiniciar',
+      lap: 'Vuelta',
+      laps: 'Vueltas',
+    },
+    countdown: {
+      hours: 'Horas',
+      minutes: 'Min',
+      seconds: 'Seg',
+      start: 'Iniciar',
+      pause: 'Pausa',
+      resume: 'Continuar',
+      reset: 'Reiniciar',
+      finished: '¡Se acabó el tiempo!',
+    },
+    pomodoro: {
+      work: 'Trabajo',
+      break: 'Descanso',
+      start: 'Iniciar',
+      pause: 'Pausa',
+      reset: 'Reiniciar',
+      sessions: 'Sesiones',
+    },
+    notepad: {
+      placeholder: 'Escribe tus notas aquí...',
+      words: 'Palabras',
+      characters: 'Caracteres',
+      clear: 'Limpiar',
+      autoSaved: 'Se guarda automáticamente en el navegador',
+    },
+    randomPicker: {
+      listMode: 'Lista',
+      coinFlip: 'Lanzar moneda',
+      placeholder: 'Escribe una opción por línea...',
+      choose: 'Elegir',
+      flip: 'Lanzar',
+      heads: 'Cara',
+      tails: 'Cruz',
+    },
+    loremIpsum: {
+      paragraphs: 'Párrafos',
+      sentences: 'Oraciones',
+      words: 'Palabras',
+      count: 'Cantidad',
+      generate: 'Generar',
+      copy: 'Copiar',
+      copied: '¡Copiado!',
+    },
+    metronome: {
+      start: 'Iniciar',
+      stop: 'Parar',
+      tapTempo: 'Tap tempo',
+    },
+    userAgent: {
+      browser: 'Navegador',
+      os: 'Sistema operativo',
+      device: 'Tipo de dispositivo',
+      platform: 'Plataforma',
+      language: 'Idioma',
+      screen: 'Resolución de pantalla',
+      window: 'Tamaño de ventana',
+      colorDepth: 'Profundidad de color',
+      pixelRatio: 'Relación de píxeles',
+      touch: 'Pantalla táctil',
+      cores: 'Núcleos de CPU',
+      cookies: 'Cookies',
+      onlineStatus: 'En línea',
+      copy: 'Copiar',
+      copied: '¡Copiado!',
+      yes: 'Sí',
+      no: 'No',
+    },
+    jwtDecoder: {
+      input: 'Token JWT',
+      placeholder: 'Pega un token JWT aquí...',
+      invalid: 'Token JWT no válido',
+      signature: 'Firma',
+      issuedAt: 'Emitido en',
+      expires: 'Expira',
+      notBefore: 'No antes de',
+    },
+    cronParser: {
+      expression: 'Expresión cron',
+      meaning: 'Significado',
+      examples: 'Ejemplos',
+      minute: 'Minuto',
+      hour: 'Hora',
+      dayOfMonth: 'Día del mes',
+      month: 'Mes',
+      dayOfWeek: 'Día de la semana',
+      every: 'Cada',
+      at: 'A las',
+      minuteLabel: 'minuto',
+      minutesLabel: 'minutos',
+      hourLabel: 'hora',
+      hoursLabel: 'horas',
+      dayLabel: 'día',
+      on: 'el',
+      inMonth: 'en',
+      onDay: 'el',
+    },
+    csvJson: {
+      input: 'Entrada',
+      output: 'Resultado',
+      convert: 'Convertir',
+      copy: 'Copiar',
+      copied: '¡Copiado!',
+      error: 'Error de conversión — comprueba los datos',
+      csvPlaceholder: 'nombre,edad,ciudad\nAnna,28,Estocolmo',
+      jsonPlaceholder: '[{"nombre":"Anna","edad":28}]',
+    },
+    diffCompare: {
+      original: 'Original',
+      modified: 'Modificado',
+      placeholderA: 'Pega el texto original...',
+      placeholderB: 'Pega el texto modificado...',
+      compare: 'Comparar',
+      linesAdded: 'añadidas',
+      linesRemoved: 'eliminadas',
+    },
+    whiteNoise: {
+      white: 'Ruido blanco',
+      pink: 'Ruido rosa',
+      brown: 'Ruido marrón',
+      volume: 'Volumen',
+      play: 'Reproducir',
+      stop: 'Parar',
+    },
+    pitchDetector: {
+      start: 'Iniciar',
+      stop: 'Parar',
+      detecting: 'Escuchando...',
+      pressStart: 'Pulsa para empezar',
+      notSupported: 'Micrófono no soportado en este navegador',
+    },
+    codeMinifier: {
+      placeholder: 'Pega código aquí...',
+      minify: 'Minificar',
+      copy: 'Copiar',
+      copied: '¡Copiado!',
+      saved: 'Ahorrado',
+    },
+    cssGradient: {
+      linear: 'Lineal',
+      radial: 'Radial',
+      angle: 'Ángulo',
+      colors: 'Colores',
+      addColor: 'Añadir',
+      presets: 'Preajustes',
+    },
+    asciiArt: {
+      upload: 'Haz clic o arrastra una imagen aquí',
+      widthLabel: 'Ancho',
+      standard: 'Estándar',
+      detailed: 'Detallado',
+      blocks: 'Bloques',
+      copy: 'Copiar',
+      copied: '¡Copiado!',
+    },
+    dnsLookup: {
+      domainLabel: 'Nombre de dominio',
+      typeLabel: 'Tipo de registro',
+      lookup: 'Buscar',
+      looking: 'Buscando...',
+      results: 'Resultados',
+      noResults: 'No se encontraron registros',
+      noRecords: 'No se encontraron registros',
+      error: 'No se pudo buscar el dominio',
+      placeholder: 'example.com',
+      search: 'Buscar',
+      loading: 'Buscando...',
+    },
+    sslCheck: {
+      domainLabel: 'Nombre de dominio',
+      check: 'Verificar',
+      checking: 'Verificando...',
+      valid: 'El certificado SSL es válido',
+      invalid: 'El certificado SSL no es válido',
+      issuer: 'Emisor',
+      expires: 'Expira',
+      error: 'No se pudo verificar SSL',
+      placeholder: 'example.com',
+      loading: 'Verificando...',
+      unknownIssuer: 'Desconocido (restricción CORS)',
+      daysLeft: 'días restantes',
+      subject: 'Dominio',
+      validFrom: 'Válido desde',
+      validTo: 'Válido hasta',
+      protocol: 'Protocolo',
+    },
+    httpHeaders: {
+      urlLabel: 'URL',
+      fetch: 'Obtener',
+      fetching: 'Obteniendo...',
+      headers: 'Headers',
+      error: 'No se pudieron obtener los headers',
+      placeholder: 'https://example.com',
+      loading: 'Obteniendo...',
+      copied: '¡Copiado!',
+      copyAll: 'Copiar todo',
+    },
+    faviconGenerator: {
+      upload: 'Haz clic o arrastra una imagen aquí',
+      downloadIco: 'Descargar favicon.ico',
+    },
+    imageCropper: {
+      upload: 'Haz clic o arrastra una imagen aquí',
+      free: 'Libre',
+      crop: 'Recortar',
+      newImage: 'Nueva imagen',
+      download: 'Descargar',
+    },
+    imageCollage: {
+      gap: 'Espacio',
+      images: 'imágenes',
+      generate: 'Crear collage',
+      download: 'Descargar',
+    },
+    pixelCounter: {
+      upload: 'Haz clic o arrastra una imagen aquí',
+      dimensions: 'Dimensiones',
+      totalPixels: 'Total',
+      distance: 'Distancia',
+      newImage: 'Nueva imagen',
+    },
+    cutFileGenerator: {
+      upload: 'Haz clic o arrastra una imagen aquí',
+      threshold: 'Umbral',
+      offset: 'Desplazamiento (px)',
+      generate: 'Generar archivo de corte',
+      downloadSvg: 'Descargar SVG',
+    },
+    pdfTools: {
+      upload: 'Haz clic o arrastra archivos PDF aquí',
+      files: 'archivos',
+      merge: 'Fusionar archivos PDF',
+      merging: 'Fusionando...',
+      download: 'Descargar PDF fusionado',
+    },
+    ocrTool: {
+      upload: 'Haz clic o arrastra una imagen aquí',
+      extract: 'Extraer texto',
+      processing: 'Analizando...',
+      result: 'Resultado',
+      noText: 'No se pudo identificar texto. Prueba con una imagen con texto oscuro claro sobre fondo claro.',
+      copy: 'Copiar',
+      copied: '¡Copiado!',
+    },
+    backgroundRemover: {
+      upload: 'Haz clic o arrastra una imagen aquí',
+      tolerance: 'Tolerancia',
+      remove: 'Eliminar fondo',
+      processing: 'Procesando...',
+      download: 'Descargar PNG',
     },
     tools: {
       'png-till-svg': { name: 'PNG a SVG', description: 'Convertir imágenes PNG a formato SVG', hint: 'Convierte imágenes de píxeles a gráficos vectoriales escalables. Elige modo blanco y negro o color, ajusta el umbral y la resolución — todo ocurre localmente.' },
@@ -1081,6 +2197,285 @@ export const translations: Record<string, Translation> = {
       preview: 'Aperçu',
       contentPreview: 'Contenu (aperçu)',
     },
+    calculator: {
+      error: 'Erreur',
+    },
+    percentCalc: {
+      modeOf: 'X% de Y',
+      modeIs: 'X est ?% de Y',
+      modeChange: '% de variation',
+      percent: 'Pourcentage',
+      value: 'Valeur',
+      total: 'Total',
+      from: 'De',
+      to: 'À',
+      result: 'Résultat',
+    },
+    randomNumber: {
+      min: 'Min',
+      max: 'Max',
+      count: 'Nombre',
+      generate: 'Générer',
+      copy: 'Copier',
+      copied: 'Copié !',
+    },
+    stopwatch: {
+      start: 'Démarrer',
+      stop: 'Arrêter',
+      reset: 'Réinitialiser',
+      lap: 'Tour',
+      laps: 'Tours',
+    },
+    countdown: {
+      hours: 'Heures',
+      minutes: 'Min',
+      seconds: 'Sec',
+      start: 'Démarrer',
+      pause: 'Pause',
+      resume: 'Reprendre',
+      reset: 'Réinitialiser',
+      finished: 'Le temps est écoulé !',
+    },
+    pomodoro: {
+      work: 'Travail',
+      break: 'Pause',
+      start: 'Démarrer',
+      pause: 'Pause',
+      reset: 'Réinitialiser',
+      sessions: 'Sessions',
+    },
+    notepad: {
+      placeholder: 'Écrivez vos notes ici...',
+      words: 'Mots',
+      characters: 'Caractères',
+      clear: 'Effacer',
+      autoSaved: 'Sauvegardé automatiquement dans le navigateur',
+    },
+    randomPicker: {
+      listMode: 'Liste',
+      coinFlip: 'Pile ou face',
+      placeholder: 'Écrivez une option par ligne...',
+      choose: 'Choisir',
+      flip: 'Lancer',
+      heads: 'Face',
+      tails: 'Pile',
+    },
+    loremIpsum: {
+      paragraphs: 'Paragraphes',
+      sentences: 'Phrases',
+      words: 'Mots',
+      count: 'Nombre',
+      generate: 'Générer',
+      copy: 'Copier',
+      copied: 'Copié !',
+    },
+    metronome: {
+      start: 'Démarrer',
+      stop: 'Arrêter',
+      tapTempo: 'Tap tempo',
+    },
+    userAgent: {
+      browser: 'Navigateur',
+      os: 'Système d\'exploitation',
+      device: 'Type d\'appareil',
+      platform: 'Plateforme',
+      language: 'Langue',
+      screen: 'Résolution d\'écran',
+      window: 'Taille de la fenêtre',
+      colorDepth: 'Profondeur de couleur',
+      pixelRatio: 'Ratio de pixels',
+      touch: 'Écran tactile',
+      cores: 'Cœurs CPU',
+      cookies: 'Cookies',
+      onlineStatus: 'En ligne',
+      copy: 'Copier',
+      copied: 'Copié !',
+      yes: 'Oui',
+      no: 'Non',
+    },
+    jwtDecoder: {
+      input: 'Token JWT',
+      placeholder: 'Collez un token JWT ici...',
+      invalid: 'Token JWT invalide',
+      signature: 'Signature',
+      issuedAt: 'Émis le',
+      expires: 'Expire',
+      notBefore: 'Pas avant',
+    },
+    cronParser: {
+      expression: 'Expression cron',
+      meaning: 'Signification',
+      examples: 'Exemples',
+      minute: 'Minute',
+      hour: 'Heure',
+      dayOfMonth: 'Jour du mois',
+      month: 'Mois',
+      dayOfWeek: 'Jour de la semaine',
+      every: 'Chaque',
+      at: 'À',
+      minuteLabel: 'minute',
+      minutesLabel: 'minutes',
+      hourLabel: 'heure',
+      hoursLabel: 'heures',
+      dayLabel: 'jour',
+      on: 'le',
+      inMonth: 'en',
+      onDay: 'le',
+    },
+    csvJson: {
+      input: 'Entrée',
+      output: 'Résultat',
+      convert: 'Convertir',
+      copy: 'Copier',
+      copied: 'Copié !',
+      error: 'Erreur de conversion — vérifiez les données',
+      csvPlaceholder: 'nom,age,ville\nAnna,28,Stockholm',
+      jsonPlaceholder: '[{"nom":"Anna","age":28}]',
+    },
+    diffCompare: {
+      original: 'Original',
+      modified: 'Modifié',
+      placeholderA: 'Collez le texte original...',
+      placeholderB: 'Collez le texte modifié...',
+      compare: 'Comparer',
+      linesAdded: 'ajoutées',
+      linesRemoved: 'supprimées',
+    },
+    whiteNoise: {
+      white: 'Bruit blanc',
+      pink: 'Bruit rose',
+      brown: 'Bruit brun',
+      volume: 'Volume',
+      play: 'Jouer',
+      stop: 'Arrêter',
+    },
+    pitchDetector: {
+      start: 'Démarrer',
+      stop: 'Arrêter',
+      detecting: 'Écoute en cours...',
+      pressStart: 'Appuyez pour commencer',
+      notSupported: 'Microphone non pris en charge dans ce navigateur',
+    },
+    codeMinifier: {
+      placeholder: 'Collez du code ici...',
+      minify: 'Minifier',
+      copy: 'Copier',
+      copied: 'Copié !',
+      saved: 'Économisé',
+    },
+    cssGradient: {
+      linear: 'Linéaire',
+      radial: 'Radial',
+      angle: 'Angle',
+      colors: 'Couleurs',
+      addColor: 'Ajouter',
+      presets: 'Préréglages',
+    },
+    asciiArt: {
+      upload: 'Cliquez ou glissez une image ici',
+      widthLabel: 'Largeur',
+      standard: 'Standard',
+      detailed: 'Détaillé',
+      blocks: 'Blocs',
+      copy: 'Copier',
+      copied: 'Copié !',
+    },
+    dnsLookup: {
+      domainLabel: 'Nom de domaine',
+      typeLabel: 'Type d\'enregistrement',
+      lookup: 'Rechercher',
+      looking: 'Recherche...',
+      results: 'Résultats',
+      noResults: 'Aucun enregistrement trouvé',
+      noRecords: 'Aucun enregistrement trouvé',
+      error: 'Impossible de rechercher le domaine',
+      placeholder: 'example.com',
+      search: 'Rechercher',
+      loading: 'Recherche...',
+    },
+    sslCheck: {
+      domainLabel: 'Nom de domaine',
+      check: 'Vérifier',
+      checking: 'Vérification...',
+      valid: 'Le certificat SSL est valide',
+      invalid: 'Le certificat SSL n\'est pas valide',
+      issuer: 'Émetteur',
+      expires: 'Expire',
+      error: 'Impossible de vérifier SSL',
+      placeholder: 'example.com',
+      loading: 'Vérification...',
+      unknownIssuer: 'Inconnu (restriction CORS)',
+      daysLeft: 'jours restants',
+      subject: 'Domaine',
+      validFrom: 'Valide à partir du',
+      validTo: 'Valide jusqu\'au',
+      protocol: 'Protocole',
+    },
+    httpHeaders: {
+      urlLabel: 'URL',
+      fetch: 'Récupérer',
+      fetching: 'Récupération...',
+      headers: 'Headers',
+      error: 'Impossible de récupérer les headers',
+      placeholder: 'https://example.com',
+      loading: 'Récupération...',
+      copied: 'Copié !',
+      copyAll: 'Tout copier',
+    },
+    faviconGenerator: {
+      upload: 'Cliquez ou glissez une image ici',
+      downloadIco: 'Télécharger favicon.ico',
+    },
+    imageCropper: {
+      upload: 'Cliquez ou glissez une image ici',
+      free: 'Libre',
+      crop: 'Rogner',
+      newImage: 'Nouvelle image',
+      download: 'Télécharger',
+    },
+    imageCollage: {
+      gap: 'Espacement',
+      images: 'images',
+      generate: 'Créer collage',
+      download: 'Télécharger',
+    },
+    pixelCounter: {
+      upload: 'Cliquez ou glissez une image ici',
+      dimensions: 'Dimensions',
+      totalPixels: 'Total',
+      distance: 'Distance',
+      newImage: 'Nouvelle image',
+    },
+    cutFileGenerator: {
+      upload: 'Cliquez ou glissez une image ici',
+      threshold: 'Seuil',
+      offset: 'Décalage (px)',
+      generate: 'Générer fichier de découpe',
+      downloadSvg: 'Télécharger SVG',
+    },
+    pdfTools: {
+      upload: 'Cliquez ou glissez des fichiers PDF ici',
+      files: 'fichiers',
+      merge: 'Fusionner les fichiers PDF',
+      merging: 'Fusion...',
+      download: 'Télécharger le PDF fusionné',
+    },
+    ocrTool: {
+      upload: 'Cliquez ou glissez une image ici',
+      extract: 'Extraire le texte',
+      processing: 'Analyse...',
+      result: 'Résultat',
+      noText: 'Aucun texte n\'a pu être identifié. Essayez une image avec du texte sombre et clair sur fond clair.',
+      copy: 'Copier',
+      copied: 'Copié !',
+    },
+    backgroundRemover: {
+      upload: 'Cliquez ou glissez une image ici',
+      tolerance: 'Tolérance',
+      remove: 'Supprimer l\'arrière-plan',
+      processing: 'Traitement...',
+      download: 'Télécharger PNG',
+    },
     tools: {
       'png-till-svg': { name: 'PNG vers SVG', description: 'Convertir des images PNG en format SVG', hint: 'Convertissez des images pixelisées en graphiques vectoriels. Choisissez le mode noir et blanc ou couleur, ajustez le seuil et la résolution — tout se passe localement.' },
       'fargpalett': { name: 'Palette de couleurs', description: 'Créer et gérer des palettes de couleurs', hint: 'Créez des palettes de couleurs pour vos projets. Choisissez des couleurs, voyez les valeurs HEX/RGB/HSL et copiez-les directement.' },
@@ -1311,6 +2706,285 @@ export const translations: Record<string, Translation> = {
       preview: 'Vorschau',
       contentPreview: 'Inhalt (Vorschau)',
     },
+    calculator: {
+      error: 'Fehler',
+    },
+    percentCalc: {
+      modeOf: 'X% von Y',
+      modeIs: 'X ist ?% von Y',
+      modeChange: '% Veränderung',
+      percent: 'Prozent',
+      value: 'Wert',
+      total: 'Gesamt',
+      from: 'Von',
+      to: 'Bis',
+      result: 'Ergebnis',
+    },
+    randomNumber: {
+      min: 'Min',
+      max: 'Max',
+      count: 'Anzahl',
+      generate: 'Generieren',
+      copy: 'Kopieren',
+      copied: 'Kopiert!',
+    },
+    stopwatch: {
+      start: 'Start',
+      stop: 'Stopp',
+      reset: 'Zurücksetzen',
+      lap: 'Runde',
+      laps: 'Runden',
+    },
+    countdown: {
+      hours: 'Std',
+      minutes: 'Min',
+      seconds: 'Sek',
+      start: 'Starten',
+      pause: 'Pause',
+      resume: 'Fortsetzen',
+      reset: 'Zurücksetzen',
+      finished: 'Die Zeit ist um!',
+    },
+    pomodoro: {
+      work: 'Arbeit',
+      break: 'Pause',
+      start: 'Starten',
+      pause: 'Pause',
+      reset: 'Zurücksetzen',
+      sessions: 'Sitzungen',
+    },
+    notepad: {
+      placeholder: 'Schreiben Sie Ihre Notizen hier...',
+      words: 'Wörter',
+      characters: 'Zeichen',
+      clear: 'Löschen',
+      autoSaved: 'Automatisch im Browser gespeichert',
+    },
+    randomPicker: {
+      listMode: 'Liste',
+      coinFlip: 'Münzwurf',
+      placeholder: 'Schreiben Sie eine Option pro Zeile...',
+      choose: 'Wählen',
+      flip: 'Werfen',
+      heads: 'Kopf',
+      tails: 'Zahl',
+    },
+    loremIpsum: {
+      paragraphs: 'Absätze',
+      sentences: 'Sätze',
+      words: 'Wörter',
+      count: 'Anzahl',
+      generate: 'Generieren',
+      copy: 'Kopieren',
+      copied: 'Kopiert!',
+    },
+    metronome: {
+      start: 'Starten',
+      stop: 'Stoppen',
+      tapTempo: 'Tap Tempo',
+    },
+    userAgent: {
+      browser: 'Browser',
+      os: 'Betriebssystem',
+      device: 'Gerätetyp',
+      platform: 'Plattform',
+      language: 'Sprache',
+      screen: 'Bildschirmauflösung',
+      window: 'Fenstergröße',
+      colorDepth: 'Farbtiefe',
+      pixelRatio: 'Pixelverhältnis',
+      touch: 'Touchscreen',
+      cores: 'CPU-Kerne',
+      cookies: 'Cookies',
+      onlineStatus: 'Online',
+      copy: 'Kopieren',
+      copied: 'Kopiert!',
+      yes: 'Ja',
+      no: 'Nein',
+    },
+    jwtDecoder: {
+      input: 'JWT-Token',
+      placeholder: 'JWT-Token hier einfügen...',
+      invalid: 'Ungültiges JWT-Token',
+      signature: 'Signatur',
+      issuedAt: 'Ausgestellt am',
+      expires: 'Läuft ab',
+      notBefore: 'Nicht vor',
+    },
+    cronParser: {
+      expression: 'Cron-Ausdruck',
+      meaning: 'Bedeutung',
+      examples: 'Beispiele',
+      minute: 'Minute',
+      hour: 'Stunde',
+      dayOfMonth: 'Tag des Monats',
+      month: 'Monat',
+      dayOfWeek: 'Wochentag',
+      every: 'Jede',
+      at: 'Um',
+      minuteLabel: 'Minute',
+      minutesLabel: 'Minuten',
+      hourLabel: 'Stunde',
+      hoursLabel: 'Stunden',
+      dayLabel: 'Tag',
+      on: 'am',
+      inMonth: 'im',
+      onDay: 'den',
+    },
+    csvJson: {
+      input: 'Eingabe',
+      output: 'Ergebnis',
+      convert: 'Konvertieren',
+      copy: 'Kopieren',
+      copied: 'Kopiert!',
+      error: 'Konvertierungsfehler — Eingabe überprüfen',
+      csvPlaceholder: 'Name,Alter,Stadt\nAnna,28,Stockholm',
+      jsonPlaceholder: '[{"Name":"Anna","Alter":28}]',
+    },
+    diffCompare: {
+      original: 'Original',
+      modified: 'Geändert',
+      placeholderA: 'Originaltext einfügen...',
+      placeholderB: 'Geänderten Text einfügen...',
+      compare: 'Vergleichen',
+      linesAdded: 'hinzugefügt',
+      linesRemoved: 'entfernt',
+    },
+    whiteNoise: {
+      white: 'Weißes Rauschen',
+      pink: 'Rosa Rauschen',
+      brown: 'Braunes Rauschen',
+      volume: 'Lautstärke',
+      play: 'Abspielen',
+      stop: 'Stoppen',
+    },
+    pitchDetector: {
+      start: 'Starten',
+      stop: 'Stoppen',
+      detecting: 'Hört zu...',
+      pressStart: 'Drücken zum Starten',
+      notSupported: 'Mikrofon wird in diesem Browser nicht unterstützt',
+    },
+    codeMinifier: {
+      placeholder: 'Code hier einfügen...',
+      minify: 'Minifizieren',
+      copy: 'Kopieren',
+      copied: 'Kopiert!',
+      saved: 'Gespart',
+    },
+    cssGradient: {
+      linear: 'Linear',
+      radial: 'Radial',
+      angle: 'Winkel',
+      colors: 'Farben',
+      addColor: 'Hinzufügen',
+      presets: 'Voreinstellungen',
+    },
+    asciiArt: {
+      upload: 'Klicken oder Bild hierher ziehen',
+      widthLabel: 'Breite',
+      standard: 'Standard',
+      detailed: 'Detailliert',
+      blocks: 'Blöcke',
+      copy: 'Kopieren',
+      copied: 'Kopiert!',
+    },
+    dnsLookup: {
+      domainLabel: 'Domainname',
+      typeLabel: 'Eintragstyp',
+      lookup: 'Nachschlagen',
+      looking: 'Suche...',
+      results: 'Ergebnisse',
+      noResults: 'Keine Einträge gefunden',
+      noRecords: 'Keine Einträge gefunden',
+      error: 'Domain konnte nicht nachgeschlagen werden',
+      placeholder: 'example.com',
+      search: 'Suchen',
+      loading: 'Suche...',
+    },
+    sslCheck: {
+      domainLabel: 'Domainname',
+      check: 'Prüfen',
+      checking: 'Prüfe...',
+      valid: 'SSL-Zertifikat ist gültig',
+      invalid: 'SSL-Zertifikat ist ungültig',
+      issuer: 'Aussteller',
+      expires: 'Läuft ab',
+      error: 'SSL konnte nicht geprüft werden',
+      placeholder: 'example.com',
+      loading: 'Prüfe...',
+      unknownIssuer: 'Unbekannt (CORS-Einschränkung)',
+      daysLeft: 'Tage verbleibend',
+      subject: 'Domain',
+      validFrom: 'Gültig ab',
+      validTo: 'Gültig bis',
+      protocol: 'Protokoll',
+    },
+    httpHeaders: {
+      urlLabel: 'URL',
+      fetch: 'Abrufen',
+      fetching: 'Abrufen...',
+      headers: 'Headers',
+      error: 'Headers konnten nicht abgerufen werden',
+      placeholder: 'https://example.com',
+      loading: 'Abrufen...',
+      copied: 'Kopiert!',
+      copyAll: 'Alle kopieren',
+    },
+    faviconGenerator: {
+      upload: 'Klicken oder Bild hierher ziehen',
+      downloadIco: 'Favicon.ico herunterladen',
+    },
+    imageCropper: {
+      upload: 'Klicken oder Bild hierher ziehen',
+      free: 'Frei',
+      crop: 'Zuschneiden',
+      newImage: 'Neues Bild',
+      download: 'Herunterladen',
+    },
+    imageCollage: {
+      gap: 'Abstand',
+      images: 'Bilder',
+      generate: 'Collage erstellen',
+      download: 'Herunterladen',
+    },
+    pixelCounter: {
+      upload: 'Klicken oder Bild hierher ziehen',
+      dimensions: 'Abmessungen',
+      totalPixels: 'Gesamt',
+      distance: 'Abstand',
+      newImage: 'Neues Bild',
+    },
+    cutFileGenerator: {
+      upload: 'Klicken oder Bild hierher ziehen',
+      threshold: 'Schwellenwert',
+      offset: 'Versatz (px)',
+      generate: 'Schnittdatei generieren',
+      downloadSvg: 'SVG herunterladen',
+    },
+    pdfTools: {
+      upload: 'Klicken oder PDF-Dateien hierher ziehen',
+      files: 'Dateien',
+      merge: 'PDF-Dateien zusammenführen',
+      merging: 'Zusammenführen...',
+      download: 'Zusammengeführte PDF herunterladen',
+    },
+    ocrTool: {
+      upload: 'Klicken oder Bild hierher ziehen',
+      extract: 'Text extrahieren',
+      processing: 'Analysiere...',
+      result: 'Ergebnis',
+      noText: 'Kein Text konnte identifiziert werden. Versuchen Sie ein Bild mit deutlichem, dunklem Text auf hellem Hintergrund.',
+      copy: 'Kopieren',
+      copied: 'Kopiert!',
+    },
+    backgroundRemover: {
+      upload: 'Klicken oder Bild hierher ziehen',
+      tolerance: 'Toleranz',
+      remove: 'Hintergrund entfernen',
+      processing: 'Verarbeite...',
+      download: 'PNG herunterladen',
+    },
     tools: {
       'png-till-svg': { name: 'PNG zu SVG', description: 'PNG-Bilder in SVG-Format konvertieren', hint: 'Konvertieren Sie Pixelbilder in skalierbare Vektorgrafiken. Wählen Sie Schwarz-Weiß oder Farbmodus, passen Sie Schwellenwert und Auflösung an — alles geschieht lokal.' },
       'fargpalett': { name: 'Farbpalette', description: 'Farbpaletten erstellen und verwalten', hint: 'Erstellen Sie Farbpaletten für Ihre Projekte. Wählen Sie Farben, sehen Sie HEX/RGB/HSL-Werte und kopieren Sie sie direkt.' },
@@ -1540,6 +3214,285 @@ export const translations: Record<string, Translation> = {
       dimensions: 'Dimensões',
       preview: 'Pré-visualização',
       contentPreview: 'Conteúdo (pré-visualização)',
+    },
+    calculator: {
+      error: 'Erro',
+    },
+    percentCalc: {
+      modeOf: 'X% de Y',
+      modeIs: 'X é ?% de Y',
+      modeChange: '% de mudança',
+      percent: 'Porcentagem',
+      value: 'Valor',
+      total: 'Total',
+      from: 'De',
+      to: 'Para',
+      result: 'Resultado',
+    },
+    randomNumber: {
+      min: 'Min',
+      max: 'Max',
+      count: 'Quantidade',
+      generate: 'Gerar',
+      copy: 'Copiar',
+      copied: 'Copiado!',
+    },
+    stopwatch: {
+      start: 'Iniciar',
+      stop: 'Parar',
+      reset: 'Reiniciar',
+      lap: 'Volta',
+      laps: 'Voltas',
+    },
+    countdown: {
+      hours: 'Horas',
+      minutes: 'Min',
+      seconds: 'Seg',
+      start: 'Iniciar',
+      pause: 'Pausa',
+      resume: 'Continuar',
+      reset: 'Reiniciar',
+      finished: 'O tempo acabou!',
+    },
+    pomodoro: {
+      work: 'Trabalho',
+      break: 'Pausa',
+      start: 'Iniciar',
+      pause: 'Pausa',
+      reset: 'Reiniciar',
+      sessions: 'Sessões',
+    },
+    notepad: {
+      placeholder: 'Escreva suas notas aqui...',
+      words: 'Palavras',
+      characters: 'Caracteres',
+      clear: 'Limpar',
+      autoSaved: 'Salvo automaticamente no navegador',
+    },
+    randomPicker: {
+      listMode: 'Lista',
+      coinFlip: 'Cara ou coroa',
+      placeholder: 'Escreva uma opção por linha...',
+      choose: 'Escolher',
+      flip: 'Lançar',
+      heads: 'Cara',
+      tails: 'Coroa',
+    },
+    loremIpsum: {
+      paragraphs: 'Parágrafos',
+      sentences: 'Frases',
+      words: 'Palavras',
+      count: 'Quantidade',
+      generate: 'Gerar',
+      copy: 'Copiar',
+      copied: 'Copiado!',
+    },
+    metronome: {
+      start: 'Iniciar',
+      stop: 'Parar',
+      tapTempo: 'Tap tempo',
+    },
+    userAgent: {
+      browser: 'Navegador',
+      os: 'Sistema operacional',
+      device: 'Tipo de dispositivo',
+      platform: 'Plataforma',
+      language: 'Idioma',
+      screen: 'Resolução da tela',
+      window: 'Tamanho da janela',
+      colorDepth: 'Profundidade de cor',
+      pixelRatio: 'Proporção de pixels',
+      touch: 'Tela sensível ao toque',
+      cores: 'Núcleos de CPU',
+      cookies: 'Cookies',
+      onlineStatus: 'Online',
+      copy: 'Copiar',
+      copied: 'Copiado!',
+      yes: 'Sim',
+      no: 'Não',
+    },
+    jwtDecoder: {
+      input: 'Token JWT',
+      placeholder: 'Cole um token JWT aqui...',
+      invalid: 'Token JWT inválido',
+      signature: 'Assinatura',
+      issuedAt: 'Emitido em',
+      expires: 'Expira',
+      notBefore: 'Não antes de',
+    },
+    cronParser: {
+      expression: 'Expressão cron',
+      meaning: 'Significado',
+      examples: 'Exemplos',
+      minute: 'Minuto',
+      hour: 'Hora',
+      dayOfMonth: 'Dia do mês',
+      month: 'Mês',
+      dayOfWeek: 'Dia da semana',
+      every: 'Cada',
+      at: 'Às',
+      minuteLabel: 'minuto',
+      minutesLabel: 'minutos',
+      hourLabel: 'hora',
+      hoursLabel: 'horas',
+      dayLabel: 'dia',
+      on: 'no',
+      inMonth: 'em',
+      onDay: 'o',
+    },
+    csvJson: {
+      input: 'Entrada',
+      output: 'Resultado',
+      convert: 'Converter',
+      copy: 'Copiar',
+      copied: 'Copiado!',
+      error: 'Erro de conversão — verifique os dados',
+      csvPlaceholder: 'nome,idade,cidade\nAnna,28,Estocolmo',
+      jsonPlaceholder: '[{"nome":"Anna","idade":28}]',
+    },
+    diffCompare: {
+      original: 'Original',
+      modified: 'Modificado',
+      placeholderA: 'Cole o texto original...',
+      placeholderB: 'Cole o texto modificado...',
+      compare: 'Comparar',
+      linesAdded: 'adicionadas',
+      linesRemoved: 'removidas',
+    },
+    whiteNoise: {
+      white: 'Ruído branco',
+      pink: 'Ruído rosa',
+      brown: 'Ruído marrom',
+      volume: 'Volume',
+      play: 'Reproduzir',
+      stop: 'Parar',
+    },
+    pitchDetector: {
+      start: 'Iniciar',
+      stop: 'Parar',
+      detecting: 'Ouvindo...',
+      pressStart: 'Pressione para começar',
+      notSupported: 'Microfone não suportado neste navegador',
+    },
+    codeMinifier: {
+      placeholder: 'Cole código aqui...',
+      minify: 'Minificar',
+      copy: 'Copiar',
+      copied: 'Copiado!',
+      saved: 'Economizado',
+    },
+    cssGradient: {
+      linear: 'Linear',
+      radial: 'Radial',
+      angle: 'Ângulo',
+      colors: 'Cores',
+      addColor: 'Adicionar',
+      presets: 'Predefinições',
+    },
+    asciiArt: {
+      upload: 'Clique ou arraste uma imagem aqui',
+      widthLabel: 'Largura',
+      standard: 'Padrão',
+      detailed: 'Detalhado',
+      blocks: 'Blocos',
+      copy: 'Copiar',
+      copied: 'Copiado!',
+    },
+    dnsLookup: {
+      domainLabel: 'Nome de domínio',
+      typeLabel: 'Tipo de registro',
+      lookup: 'Pesquisar',
+      looking: 'Pesquisando...',
+      results: 'Resultados',
+      noResults: 'Nenhum registro encontrado',
+      noRecords: 'Nenhum registro encontrado',
+      error: 'Não foi possível pesquisar o domínio',
+      placeholder: 'example.com',
+      search: 'Pesquisar',
+      loading: 'Pesquisando...',
+    },
+    sslCheck: {
+      domainLabel: 'Nome de domínio',
+      check: 'Verificar',
+      checking: 'Verificando...',
+      valid: 'O certificado SSL é válido',
+      invalid: 'O certificado SSL não é válido',
+      issuer: 'Emissor',
+      expires: 'Expira',
+      error: 'Não foi possível verificar SSL',
+      placeholder: 'example.com',
+      loading: 'Verificando...',
+      unknownIssuer: 'Desconhecido (restrição CORS)',
+      daysLeft: 'dias restantes',
+      subject: 'Domínio',
+      validFrom: 'Válido desde',
+      validTo: 'Válido até',
+      protocol: 'Protocolo',
+    },
+    httpHeaders: {
+      urlLabel: 'URL',
+      fetch: 'Buscar',
+      fetching: 'Buscando...',
+      headers: 'Headers',
+      error: 'Não foi possível buscar os headers',
+      placeholder: 'https://example.com',
+      loading: 'Buscando...',
+      copied: 'Copiado!',
+      copyAll: 'Copiar tudo',
+    },
+    faviconGenerator: {
+      upload: 'Clique ou arraste uma imagem aqui',
+      downloadIco: 'Baixar favicon.ico',
+    },
+    imageCropper: {
+      upload: 'Clique ou arraste uma imagem aqui',
+      free: 'Livre',
+      crop: 'Recortar',
+      newImage: 'Nova imagem',
+      download: 'Baixar',
+    },
+    imageCollage: {
+      gap: 'Espaçamento',
+      images: 'imagens',
+      generate: 'Criar colagem',
+      download: 'Baixar',
+    },
+    pixelCounter: {
+      upload: 'Clique ou arraste uma imagem aqui',
+      dimensions: 'Dimensões',
+      totalPixels: 'Total',
+      distance: 'Distância',
+      newImage: 'Nova imagem',
+    },
+    cutFileGenerator: {
+      upload: 'Clique ou arraste uma imagem aqui',
+      threshold: 'Limiar',
+      offset: 'Deslocamento (px)',
+      generate: 'Gerar arquivo de corte',
+      downloadSvg: 'Baixar SVG',
+    },
+    pdfTools: {
+      upload: 'Clique ou arraste arquivos PDF aqui',
+      files: 'arquivos',
+      merge: 'Mesclar arquivos PDF',
+      merging: 'Mesclando...',
+      download: 'Baixar PDF mesclado',
+    },
+    ocrTool: {
+      upload: 'Clique ou arraste uma imagem aqui',
+      extract: 'Extrair texto',
+      processing: 'Analisando...',
+      result: 'Resultado',
+      noText: 'Nenhum texto pôde ser identificado. Tente uma imagem com texto escuro e claro em fundo claro.',
+      copy: 'Copiar',
+      copied: 'Copiado!',
+    },
+    backgroundRemover: {
+      upload: 'Clique ou arraste uma imagem aqui',
+      tolerance: 'Tolerância',
+      remove: 'Remover fundo',
+      processing: 'Processando...',
+      download: 'Baixar PNG',
     },
     tools: {
       'png-till-svg': { name: 'PNG para SVG', description: 'Converter imagens PNG para formato SVG', hint: 'Converta imagens de pixels para gráficos vetoriais escaláveis. Escolha modo preto e branco ou cor, ajuste o limiar e a resolução — tudo acontece localmente.' },
