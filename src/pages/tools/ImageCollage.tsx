@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowLeft, Plus, Download, X } from 'lucide-react'
+import { Plus, Download, X } from 'lucide-react'
 import { useLanguage } from '../../context/LanguageContext'
 
 type Layout = '2x1' | '1x2' | '2x2' | '3x1' | '1x3'
@@ -88,13 +87,7 @@ export default function ImageCollage() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 py-10">
-      <Link
-        to="/"
-        className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hc:text-white transition-colors hover:text-gray-900 dark:hover:text-white"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        {t.backToTools}
-      </Link>
+      <BackLink />
 
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{translation?.name}</h1>

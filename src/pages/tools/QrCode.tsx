@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowLeft, Download } from 'lucide-react'
+import { Download } from 'lucide-react'
 import QRCode from 'qrcode'
 import { useLanguage } from '../../context/LanguageContext'
 
@@ -45,13 +44,7 @@ export default function QrCodeTool() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-6 py-10">
-      <Link
-        to="/"
-        className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hc:text-white transition-colors hover:text-gray-900 dark:hover:text-white"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        {t.backToTools}
-      </Link>
+      <BackLink />
 
       <div>
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
