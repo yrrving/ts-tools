@@ -211,11 +211,53 @@ export default function CutFileGenerator() {
     const canvas = canvasRef.current
     if (!canvas) return
 
-    // Offset for cropping: 0 when including background, imageRect origin when cropping
-    const ox = includeBackground ? 0 : imageRect.x
-    const oy = includeBackground ? 0 : imageRect.y
-    const w = includeBackground ? canvas.width : imageRect.w
-    const h = includeBackground ? canvas.height : imageRect.h
+    let ox: number, oy: number, w: number, h: number
+
+    if (includeBackground) {
+      ox = 0
+      oy = 0
+      w = canvas.width
+      h = canvas.height
+    } else {
+      // Compute bounding box that includes the image AND all shapes
+      let minX = imageRect.x
+      let minY = imageRect.y
+      let maxX = imageRect.x + imageRect.w
+      let maxY = imageRect.y + imageRect.h
+
+      for (const shape of shapes) {
+        if (shape.type === 'rect') {
+          minX = Math.min(minX, shape.x)
+          minY = Math.min(minY, shape.y)
+          maxX = Math.max(maxX, shape.x + shape.w)
+          maxY = Math.max(maxY, shape.y + shape.h)
+        } else if (shape.type === 'circle') {
+          minX = Math.min(minX, shape.cx - shape.rx)
+          minY = Math.min(minY, shape.cy - shape.ry)
+          maxX = Math.max(maxX, shape.cx + shape.rx)
+          maxY = Math.max(maxY, shape.cy + shape.ry)
+        } else if (shape.type === 'freehand') {
+          for (const p of shape.points) {
+            minX = Math.min(minX, p.x)
+            minY = Math.min(minY, p.y)
+            maxX = Math.max(maxX, p.x)
+            maxY = Math.max(maxY, p.y)
+          }
+        }
+      }
+
+      // Add small padding for stroke width
+      const pad = strokeWidth
+      minX -= pad
+      minY -= pad
+      maxX += pad
+      maxY += pad
+
+      ox = minX
+      oy = minY
+      w = maxX - minX
+      h = maxY - minY
+    }
 
     const shapeSvg = shapes.map((shape) => {
       if (shape.type === 'rect') {
