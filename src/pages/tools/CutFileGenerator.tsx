@@ -29,6 +29,7 @@ export default function CutFileGenerator() {
   const [drawStart, setDrawStart] = useState({ x: 0, y: 0 })
   const [currentShape, setCurrentShape] = useState<Shape | null>(null)
   const [strokeWidth, setStrokeWidth] = useState(2)
+  const [includeBackground, setIncludeBackground] = useState(false)
 
   const getCanvasCoords = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current
@@ -95,11 +96,10 @@ export default function CutFileGenerator() {
     const canvas = canvasRef.current
     const container = containerRef.current
     if (!canvas || !container) return
-    const cw = container.clientWidth
-    const ch = Math.max(500, cw * 0.7)
-    canvas.width = cw
-    canvas.height = ch
-    const rect = fitImageToCanvas(img, cw, ch)
+    const size = container.clientWidth
+    canvas.width = size
+    canvas.height = size
+    const rect = fitImageToCanvas(img, size, size)
     setImageRect(rect)
   }, [fitImageToCanvas])
 
@@ -210,23 +210,30 @@ export default function CutFileGenerator() {
     if (!image) return
     const canvas = canvasRef.current
     if (!canvas) return
-    const w = canvas.width
-    const h = canvas.height
+
+    // Offset for cropping: 0 when including background, imageRect origin when cropping
+    const ox = includeBackground ? 0 : imageRect.x
+    const oy = includeBackground ? 0 : imageRect.y
+    const w = includeBackground ? canvas.width : imageRect.w
+    const h = includeBackground ? canvas.height : imageRect.h
 
     const shapeSvg = shapes.map((shape) => {
       if (shape.type === 'rect') {
-        return `  <rect x="${shape.x}" y="${shape.y}" width="${shape.w}" height="${shape.h}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
+        return `  <rect x="${shape.x - ox}" y="${shape.y - oy}" width="${shape.w}" height="${shape.h}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
       } else if (shape.type === 'circle') {
-        return `  <ellipse cx="${shape.cx}" cy="${shape.cy}" rx="${shape.rx}" ry="${shape.ry}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
+        return `  <ellipse cx="${shape.cx - ox}" cy="${shape.cy - oy}" rx="${shape.rx}" ry="${shape.ry}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
       } else if (shape.type === 'freehand' && shape.points.length > 1) {
-        const d = shape.points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ')
+        const d = shape.points.map((p, i) => `${i === 0 ? 'M' : 'L'}${(p.x - ox).toFixed(1)},${(p.y - oy).toFixed(1)}`).join(' ')
         return `  <path d="${d}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
       }
       return ''
     }).filter(Boolean).join('\n')
 
+    const imgX = imageRect.x - ox
+    const imgY = imageRect.y - oy
+
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
-  <image href="${imageDataUrl}" x="${imageRect.x}" y="${imageRect.y}" width="${imageRect.w}" height="${imageRect.h}"/>
+  <image href="${imageDataUrl}" x="${imgX}" y="${imgY}" width="${imageRect.w}" height="${imageRect.h}"/>
 ${shapeSvg}
 </svg>`
 
@@ -346,14 +353,27 @@ ${shapeSvg}
           </div>
 
           {/* Export */}
-          <button
-            onClick={exportSvg}
-            disabled={shapes.length === 0}
-            className="w-full flex items-center justify-center gap-2 rounded-lg bg-green-600 hc:bg-white hc:text-black px-4 py-2.5 font-medium text-white transition-colors hover:bg-green-700 disabled:opacity-40"
-          >
-            <Download className="h-4 w-4" />
-            {ct?.exportSvg || 'Exportera SVG'}
-          </button>
+          <div className="flex items-center justify-between gap-4">
+            <label className="flex items-center gap-2 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={includeBackground}
+                onChange={(e) => setIncludeBackground(e.target.checked)}
+                className="h-4 w-4 rounded border-gray-300 dark:border-gray-600 accent-blue-500"
+              />
+              <span className="text-sm text-gray-600 dark:text-gray-400 hc:text-gray-200">
+                {ct?.includeBackground || 'Inkludera bakgrund'}
+              </span>
+            </label>
+            <button
+              onClick={exportSvg}
+              disabled={shapes.length === 0}
+              className="flex items-center justify-center gap-2 rounded-lg bg-green-600 hc:bg-white hc:text-black px-6 py-2.5 font-medium text-white transition-colors hover:bg-green-700 disabled:opacity-40"
+            >
+              <Download className="h-4 w-4" />
+              {ct?.exportSvg || 'Exportera SVG'}
+            </button>
+          </div>
         </>
       )}
     </div>

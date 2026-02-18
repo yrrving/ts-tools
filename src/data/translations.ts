@@ -472,6 +472,7 @@ export interface Translation {
     clearAll: string
     strokeWidth: string
     exportSvg: string
+    includeBackground: string
   }
   pdfTools?: {
     upload: string
@@ -931,6 +932,7 @@ export const translations: Record<string, Translation> = {
       clearAll: 'Rensa alla',
       strokeWidth: 'Linjebredd',
       exportSvg: 'Exportera SVG',
+      includeBackground: 'Inkludera bakgrund',
     },
     pdfTools: {
       upload: 'Klicka eller dra hit PDF-filer',
@@ -1443,6 +1445,7 @@ export const translations: Record<string, Translation> = {
       clearAll: 'Clear all',
       strokeWidth: 'Stroke width',
       exportSvg: 'Export SVG',
+      includeBackground: 'Include background',
     },
     pdfTools: {
       upload: 'Click or drag PDF files here',
@@ -1955,6 +1958,7 @@ export const translations: Record<string, Translation> = {
       clearAll: 'Borrar todo',
       strokeWidth: 'Grosor de línea',
       exportSvg: 'Exportar SVG',
+      includeBackground: 'Incluir fondo',
     },
     pdfTools: {
       upload: 'Haz clic o arrastra archivos PDF aquí',
@@ -2467,6 +2471,7 @@ export const translations: Record<string, Translation> = {
       clearAll: 'Tout effacer',
       strokeWidth: 'Épaisseur du trait',
       exportSvg: 'Exporter SVG',
+      includeBackground: 'Inclure l\'arrière-plan',
     },
     pdfTools: {
       upload: 'Cliquez ou glissez des fichiers PDF ici',
@@ -2979,6 +2984,7 @@ export const translations: Record<string, Translation> = {
       clearAll: 'Alle löschen',
       strokeWidth: 'Strichbreite',
       exportSvg: 'SVG exportieren',
+      includeBackground: 'Hintergrund einbeziehen',
     },
     pdfTools: {
       upload: 'Klicken oder PDF-Dateien hierher ziehen',
@@ -3491,6 +3497,7 @@ export const translations: Record<string, Translation> = {
       clearAll: 'Limpar tudo',
       strokeWidth: 'Espessura do traço',
       exportSvg: 'Exportar SVG',
+      includeBackground: 'Incluir fundo',
     },
     pdfTools: {
       upload: 'Clique ou arraste arquivos PDF aqui',
