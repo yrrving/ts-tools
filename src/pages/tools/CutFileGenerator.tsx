@@ -10,6 +10,8 @@ type Shape =
 
 type Tool = 'rect' | 'circle' | 'freehand'
 
+const CANVAS_PADDING = 60
+
 export default function CutFileGenerator() {
   const { t } = useLanguage()
   const translation = t.tools['skarfilsgenerator']
@@ -44,7 +46,13 @@ export default function CutFileGenerator() {
     const ctx = canvas.getContext('2d')!
 
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+
+    // Draw margin background
+    ctx.fillStyle = '#e5e7eb'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+    // Draw image centered with padding
+    ctx.drawImage(img, CANVAS_PADDING, CANVAS_PADDING, img.width, img.height)
 
     const drawShape = (shape: Shape) => {
       ctx.strokeStyle = '#ff0000'
@@ -84,8 +92,8 @@ export default function CutFileGenerator() {
         setCurrentShape(null)
         const canvas = canvasRef.current
         if (canvas) {
-          canvas.width = img.width
-          canvas.height = img.height
+          canvas.width = img.width + CANVAS_PADDING * 2
+          canvas.height = img.height + CANVAS_PADDING * 2
         }
       }
       img.src = dataUrl
@@ -174,8 +182,8 @@ export default function CutFileGenerator() {
 
   const exportSvg = () => {
     if (!image) return
-    const w = image.width
-    const h = image.height
+    const w = image.width + CANVAS_PADDING * 2
+    const h = image.height + CANVAS_PADDING * 2
 
     const shapeSvg = shapes.map((shape) => {
       if (shape.type === 'rect') {
@@ -190,7 +198,7 @@ export default function CutFileGenerator() {
     }).filter(Boolean).join('\n')
 
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
-  <image href="${imageDataUrl}" width="${w}" height="${h}"/>
+  <image href="${imageDataUrl}" x="${CANVAS_PADDING}" y="${CANVAS_PADDING}" width="${image.width}" height="${image.height}"/>
 ${shapeSvg}
 </svg>`
 
