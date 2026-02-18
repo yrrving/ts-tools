@@ -4,13 +4,41 @@ import { ArrowLeft, Download, Square, Circle, Pencil, Undo2, Trash2, Upload } fr
 import { useLanguage } from '../../context/LanguageContext'
 
 type Shape =
-  | { type: 'rect'; x: number; y: number; w: number; h: number }
+  | { type: 'rect'; x: number; y: number; w: number; h: number; rx: number }
   | { type: 'circle'; cx: number; cy: number; rx: number; ry: number }
   | { type: 'freehand'; points: { x: number; y: number }[] }
 
 type Tool = 'rect' | 'circle' | 'freehand'
 
 interface ImageRect { x: number; y: number; w: number; h: number }
+
+const CORNER_RADIUS = 20
+
+const binarizeImage = (dataUrl: string): Promise<string> =>
+  new Promise((resolve) => {
+    const img = new Image()
+    img.onload = () => {
+      const canvas = document.createElement('canvas')
+      canvas.width = img.width
+      canvas.height = img.height
+      const ctx = canvas.getContext('2d')!
+      ctx.drawImage(img, 0, 0)
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+      const d = imageData.data
+      for (let i = 0; i < d.length; i += 4) {
+        const alpha = d[i + 3] / 255
+        const r = d[i] * alpha + 255 * (1 - alpha)
+        const g = d[i + 1] * alpha + 255 * (1 - alpha)
+        const b = d[i + 2] * alpha + 255 * (1 - alpha)
+        const lum = 0.299 * r + 0.587 * g + 0.114 * b
+        const v = lum < 128 ? 0 : 255
+        d[i] = v; d[i + 1] = v; d[i + 2] = v; d[i + 3] = 255
+      }
+      ctx.putImageData(imageData, 0, 0)
+      resolve(canvas.toDataURL())
+    }
+    img.src = dataUrl
+  })
 
 export default function CutFileGenerator() {
   const { t } = useLanguage()
@@ -31,20 +59,19 @@ export default function CutFileGenerator() {
   const [includeBackground, setIncludeBackground] = useState(false)
   const strokeWidth = 2
 
-  const getCanvasCoords = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
+  const getCanvasCoords = useCallback((clientX: number, clientY: number) => {
     const canvas = canvasRef.current
     if (!canvas) return { x: 0, y: 0 }
     const rect = canvas.getBoundingClientRect()
     const scaleX = canvas.width / rect.width
     const scaleY = canvas.height / rect.height
     return {
-      x: (e.clientX - rect.left) * scaleX,
-      y: (e.clientY - rect.top) * scaleY,
+      x: (clientX - rect.left) * scaleX,
+      y: (clientY - rect.top) * scaleY,
     }
   }, [])
 
   const fitImageToCanvas = useCallback((img: HTMLImageElement, canvasW: number, canvasH: number): ImageRect => {
-    // Scale image to fit ~55% of the canvas, centered
     const maxW = canvasW * 0.55
     const maxH = canvasH * 0.55
     const scale = Math.min(maxW / img.width, maxH / img.height, 1)
@@ -63,11 +90,8 @@ export default function CutFileGenerator() {
     if (!canvas) return
     const ctx = canvas.getContext('2d')!
 
-    // Background (drawing area)
     ctx.fillStyle = '#e5e7eb'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-    // Draw image at computed position
     ctx.drawImage(img, imgRect.x, imgRect.y, imgRect.w, imgRect.h)
 
     const drawShape = (shape: Shape) => {
@@ -76,7 +100,11 @@ export default function CutFileGenerator() {
       ctx.fillStyle = 'transparent'
       ctx.beginPath()
       if (shape.type === 'rect') {
-        ctx.rect(shape.x, shape.y, shape.w, shape.h)
+        if (shape.rx > 0) {
+          ctx.roundRect(shape.x, shape.y, shape.w, shape.h, shape.rx)
+        } else {
+          ctx.rect(shape.x, shape.y, shape.w, shape.h)
+        }
       } else if (shape.type === 'circle') {
         ctx.ellipse(shape.cx, shape.cy, Math.abs(shape.rx), Math.abs(shape.ry), 0, 0, Math.PI * 2)
       } else if (shape.type === 'freehand' && shape.points.length > 1) {
@@ -127,25 +155,23 @@ export default function CutFileGenerator() {
     reader.readAsDataURL(file)
   }
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const handlePointerDown = (clientX: number, clientY: number) => {
     if (!image) return
-    const pos = getCanvasCoords(e)
+    const pos = getCanvasCoords(clientX, clientY)
     setDrawing(true)
     setDrawStart(pos)
-
     if (tool === 'freehand') {
       setCurrentShape({ type: 'freehand', points: [pos] })
     } else if (tool === 'rect') {
-      setCurrentShape({ type: 'rect', x: pos.x, y: pos.y, w: 0, h: 0 })
+      setCurrentShape({ type: 'rect', x: pos.x, y: pos.y, w: 0, h: 0, rx: CORNER_RADIUS })
     } else {
       setCurrentShape({ type: 'circle', cx: pos.x, cy: pos.y, rx: 0, ry: 0 })
     }
   }
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const handlePointerMove = (clientX: number, clientY: number) => {
     if (!drawing || !image) return
-    const pos = getCanvasCoords(e)
-
+    const pos = getCanvasCoords(clientX, clientY)
     if (tool === 'freehand') {
       setCurrentShape((prev) => {
         if (!prev || prev.type !== 'freehand') return prev
@@ -158,6 +184,7 @@ export default function CutFileGenerator() {
         y: Math.min(drawStart.y, pos.y),
         w: Math.abs(pos.x - drawStart.x),
         h: Math.abs(pos.y - drawStart.y),
+        rx: CORNER_RADIUS,
       })
     } else {
       const rx = Math.abs(pos.x - drawStart.x) / 2
@@ -172,21 +199,19 @@ export default function CutFileGenerator() {
     }
   }
 
-  const handleMouseUp = () => {
+  const handlePointerUp = () => {
     if (!drawing || !currentShape) {
       setDrawing(false)
       return
     }
     setDrawing(false)
 
-    // Only add shape if it has meaningful size
     let valid = false
     if (currentShape.type === 'rect') valid = currentShape.w > 2 && currentShape.h > 2
     else if (currentShape.type === 'circle') valid = currentShape.rx > 2 && currentShape.ry > 2
     else if (currentShape.type === 'freehand') valid = currentShape.points.length > 3
 
     if (valid) {
-      // Simplify freehand paths
       if (currentShape.type === 'freehand' && currentShape.points.length > 100) {
         const step = Math.ceil(currentShape.points.length / 100)
         const simplified = currentShape.points.filter((_, i) => i % step === 0 || i === currentShape.points.length - 1)
@@ -198,6 +223,25 @@ export default function CutFileGenerator() {
     setCurrentShape(null)
   }
 
+  const handleMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => handlePointerDown(e.clientX, e.clientY)
+  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => handlePointerMove(e.clientX, e.clientY)
+  const handleMouseUp = () => handlePointerUp()
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    e.preventDefault()
+    handlePointerDown(e.touches[0].clientX, e.touches[0].clientY)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    e.preventDefault()
+    handlePointerMove(e.touches[0].clientX, e.touches[0].clientY)
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    e.preventDefault()
+    handlePointerUp()
+  }
+
   const undo = () => {
     setShapes((prev) => prev.slice(0, -1))
   }
@@ -206,7 +250,7 @@ export default function CutFileGenerator() {
     setShapes([])
   }
 
-  const exportSvg = () => {
+  const exportSvg = async () => {
     if (!image) return
     const canvas = canvasRef.current
     if (!canvas) return
@@ -219,7 +263,6 @@ export default function CutFileGenerator() {
       w = canvas.width
       h = canvas.height
     } else {
-      // Compute bounding box that includes the image AND all shapes
       let minX = imageRect.x
       let minY = imageRect.y
       let maxX = imageRect.x + imageRect.w
@@ -246,7 +289,6 @@ export default function CutFileGenerator() {
         }
       }
 
-      // Add small padding for stroke width
       const pad = strokeWidth
       minX -= pad
       minY -= pad
@@ -259,14 +301,16 @@ export default function CutFileGenerator() {
       h = maxY - minY
     }
 
+    const finalDataUrl = await binarizeImage(imageDataUrl)
+
     const shapeSvg = shapes.map((shape) => {
       if (shape.type === 'rect') {
-        return `  <rect x="${shape.x - ox}" y="${shape.y - oy}" width="${shape.w}" height="${shape.h}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
+        return `    <rect x="${shape.x - ox}" y="${shape.y - oy}" width="${shape.w}" height="${shape.h}" rx="${shape.rx}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
       } else if (shape.type === 'circle') {
-        return `  <ellipse cx="${shape.cx - ox}" cy="${shape.cy - oy}" rx="${shape.rx}" ry="${shape.ry}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
+        return `    <ellipse cx="${shape.cx - ox}" cy="${shape.cy - oy}" rx="${shape.rx}" ry="${shape.ry}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
       } else if (shape.type === 'freehand' && shape.points.length > 1) {
         const d = shape.points.map((p, i) => `${i === 0 ? 'M' : 'L'}${(p.x - ox).toFixed(1)},${(p.y - oy).toFixed(1)}`).join(' ')
-        return `  <path d="${d}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
+        return `    <path d="${d}" fill="none" stroke="red" stroke-width="${strokeWidth}"/>`
       }
       return ''
     }).filter(Boolean).join('\n')
@@ -275,8 +319,10 @@ export default function CutFileGenerator() {
     const imgY = imageRect.y - oy
 
     const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
-  <image href="${imageDataUrl}" x="${imgX}" y="${imgY}" width="${imageRect.w}" height="${imageRect.h}"/>
+  <g>
+    <image href="${finalDataUrl}" x="${imgX}" y="${imgY}" width="${imageRect.w}" height="${imageRect.h}"/>
 ${shapeSvg}
+  </g>
 </svg>`
 
     const blob = new Blob([svg], { type: 'image/svg+xml' })
@@ -363,7 +409,6 @@ ${shapeSvg}
               <Trash2 className="h-4 w-4" />
               {ct?.clearAll || 'Rensa alla'}
             </button>
-
           </div>
 
           {/* Canvas */}
@@ -371,10 +416,14 @@ ${shapeSvg}
             <canvas
               ref={canvasRef}
               className="mx-auto block max-w-full cursor-crosshair"
+              style={{ touchAction: 'none' }}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             />
           </div>
 
