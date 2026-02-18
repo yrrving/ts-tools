@@ -10,6 +10,64 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '0.10.1',
+    date: '2026-02-18',
+    title: {
+      sv: 'Skärfilsgeneratoruppdatering & navigeringsfix',
+      en: 'Cut File Generator update & navigation fix',
+      es: 'Actualización del generador de corte y corrección de navegación',
+      fr: 'Mise à jour du générateur de découpe et correction de navigation',
+      de: 'Schnittdatei-Generator-Update & Navigationskorrektur',
+      pt: 'Atualização do gerador de corte e correção de navegação',
+    },
+    changes: [
+      {
+        type: 'added',
+        text: {
+          sv: 'Skärfilsgeneratorn: flytta-verktyg (handikon) — dra om former efter att du ritat dem, fungerar med touch',
+          en: 'Cut File Generator: move tool (hand icon) — reposition shapes after drawing, works with touch',
+          es: 'Generador de corte: herramienta mover (icono de mano) — reposicionar formas, funciona con táctil',
+          fr: 'Générateur de découpe : outil déplacer (icône main) — repositionner les formes, fonctionne au toucher',
+          de: 'Schnittdatei-Generator: Verschieben-Werkzeug (Hand-Symbol) — Formen nachträglich verschieben, Touch-unterstützt',
+          pt: 'Gerador de corte: ferramenta mover (ícone de mão) — reposicionar formas, funciona com toque',
+        },
+      },
+      {
+        type: 'changed',
+        text: {
+          sv: 'Skärfilsgeneratorn: SVG exporteras nu med mått i mm (96 dpi-standard) istället för pixlar — lasermjukvara som Glowforge läser rätt fysisk storlek direkt',
+          en: 'Cut File Generator: SVG now exports with mm dimensions (96 dpi standard) instead of pixels — laser software like Glowforge reads correct physical size directly',
+          es: 'Generador de corte: SVG ahora exporta con dimensiones en mm (estándar 96 dpi) en lugar de píxeles',
+          fr: 'Générateur de découpe : le SVG est maintenant exporté avec des dimensions en mm (standard 96 dpi) au lieu de pixels',
+          de: 'Schnittdatei-Generator: SVG wird jetzt mit mm-Abmessungen (96-dpi-Standard) statt Pixeln exportiert',
+          pt: 'Gerador de corte: SVG agora exporta com dimensões em mm (padrão 96 dpi) em vez de pixels',
+        },
+      },
+      {
+        type: 'fixed',
+        text: {
+          sv: 'Tillbaka-knappen i alla verktyg använder nu webbläsarhistoriken (navigate(-1)) — backar till rätt kategorilista istället för startsidan',
+          en: 'Back button in all tools now uses browser history (navigate(-1)) — returns to correct category list instead of the home page',
+          es: 'El botón atrás en todas las herramientas ahora usa el historial del navegador — regresa a la lista de categoría correcta',
+          fr: 'Le bouton retour dans tous les outils utilise maintenant l\'historique du navigateur — revient à la bonne liste de catégorie',
+          de: 'Zurück-Schaltfläche in allen Werkzeugen nutzt jetzt den Browser-Verlauf — kehrt zur richtigen Kategorieliste zurück',
+          pt: 'O botão voltar em todas as ferramentas agora usa o histórico do navegador — retorna à lista de categoria correta',
+        },
+      },
+      {
+        type: 'fixed',
+        text: {
+          sv: 'Uppdatering av sidan på direkt-URL ger inte längre "File not found" på GitHub Pages',
+          en: 'Refreshing the page on a direct URL no longer shows "File not found" on GitHub Pages',
+          es: 'Recargar la página en una URL directa ya no muestra "File not found" en GitHub Pages',
+          fr: 'Actualiser la page sur une URL directe n\'affiche plus "File not found" sur GitHub Pages',
+          de: 'Das Aktualisieren der Seite unter einer direkten URL zeigt auf GitHub Pages nicht mehr "File not found"',
+          pt: 'Atualizar a página numa URL direta não mostra mais "File not found" no GitHub Pages',
+        },
+      },
+    ],
+  },
+  {
     version: '0.10.0',
     date: '2026-02-17',
     title: {
