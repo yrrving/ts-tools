@@ -353,22 +353,22 @@ ${shapeSvg}
           </div>
 
           {/* Export */}
-          <div className="flex items-center justify-between gap-4">
-            <label className="flex items-center gap-2 cursor-pointer select-none">
-              <input
-                type="checkbox"
-                checked={includeBackground}
-                onChange={(e) => setIncludeBackground(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 dark:border-gray-600 accent-blue-500"
-              />
-              <span className="text-sm text-gray-600 dark:text-gray-400 hc:text-gray-200">
+          <div className="rounded-xl border border-gray-200 dark:border-gray-700 hc:border-white bg-gray-50 dark:bg-gray-800 hc:bg-black p-4 space-y-4">
+            <label
+              className="flex items-center justify-between cursor-pointer select-none"
+              onClick={() => setIncludeBackground((v) => !v)}
+            >
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300 hc:text-white">
                 {ct?.includeBackground || 'Inkludera bakgrund'}
               </span>
+              <div className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${includeBackground ? 'bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'}`}>
+                <span className={`inline-block h-4 w-4 rounded-full bg-white transition-transform ${includeBackground ? 'translate-x-6' : 'translate-x-1'}`} />
+              </div>
             </label>
             <button
               onClick={exportSvg}
               disabled={shapes.length === 0}
-              className="flex items-center justify-center gap-2 rounded-lg bg-green-600 hc:bg-white hc:text-black px-6 py-2.5 font-medium text-white transition-colors hover:bg-green-700 disabled:opacity-40"
+              className="w-full flex items-center justify-center gap-2 rounded-lg bg-green-600 hc:bg-white hc:text-black px-4 py-2.5 font-medium text-white transition-colors hover:bg-green-700 disabled:opacity-40"
             >
               <Download className="h-4 w-4" />
               {ct?.exportSvg || 'Exportera SVG'}
