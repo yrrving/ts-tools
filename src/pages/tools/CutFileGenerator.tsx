@@ -28,8 +28,8 @@ export default function CutFileGenerator() {
   const [drawing, setDrawing] = useState(false)
   const [drawStart, setDrawStart] = useState({ x: 0, y: 0 })
   const [currentShape, setCurrentShape] = useState<Shape | null>(null)
-  const [strokeWidth, setStrokeWidth] = useState(2)
   const [includeBackground, setIncludeBackground] = useState(false)
+  const strokeWidth = 2
 
   const getCanvasCoords = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current
@@ -364,22 +364,6 @@ ${shapeSvg}
               {ct?.clearAll || 'Rensa alla'}
             </button>
 
-            <div className="mx-1 h-6 w-px bg-gray-300 dark:bg-gray-600" />
-
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-gray-500 dark:text-gray-400 hc:text-gray-300 whitespace-nowrap">
-                {ct?.strokeWidth || 'Linjebredd'}
-              </span>
-              <input
-                type="range"
-                min={1}
-                max={5}
-                value={strokeWidth}
-                onChange={(e) => setStrokeWidth(Number(e.target.value))}
-                className="w-20 accent-blue-500"
-              />
-              <span className="text-xs font-mono text-gray-500 dark:text-gray-400 w-4">{strokeWidth}</span>
-            </div>
           </div>
 
           {/* Canvas */}
