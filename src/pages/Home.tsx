@@ -1,24 +1,26 @@
 import { useState } from 'react'
-import { Search, ArrowLeft } from 'lucide-react'
+import { useSearchParams } from 'react-router-dom'
+import { Search, ArrowLeft, Image, FileText, Volume2, Code2, Globe, Hash, Zap, type LucideIcon } from 'lucide-react'
 import TabNavigation from '../components/TabNavigation'
 import ToolCard from '../components/ToolCard'
 import { tools, categoryOrder, type Category, type ToolCategory } from '../data/tools'
 import { useLanguage } from '../context/LanguageContext'
 
-const categoryIcons: Record<ToolCategory, string> = {
-  bild: '🖼',
-  text: '📝',
-  ljud: '🔊',
-  kod: '💻',
-  natverk: '🌐',
-  berakning: '🔢',
-  produktivitet: '⚡',
+const categoryIcons: Record<ToolCategory, LucideIcon> = {
+  bild: Image,
+  text: FileText,
+  ljud: Volume2,
+  kod: Code2,
+  natverk: Globe,
+  berakning: Hash,
+  produktivitet: Zap,
 }
 
 export default function Home() {
   const [category, setCategory] = useState<Category>('alla')
   const [search, setSearch] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState<ToolCategory | null>(null)
+  const [searchParams, setSearchParams] = useSearchParams()
+  const selectedCategory = (searchParams.get('cat') as ToolCategory) || null
   const { t } = useLanguage()
 
   const categoryNames = t.categories ?? {
@@ -54,7 +56,7 @@ export default function Home() {
 
   const handleTabChange = (tab: Category) => {
     setCategory(tab)
-    setSelectedCategory(null)
+    setSearchParams({})
   }
 
   return (
@@ -70,7 +72,7 @@ export default function Home() {
           value={search}
           onChange={(e) => {
             setSearch(e.target.value)
-            if (e.target.value.trim()) setSelectedCategory(null)
+            if (e.target.value.trim()) setSearchParams({})
           }}
           placeholder={t.searchPlaceholder}
           className="w-full rounded-lg border border-gray-300 dark:border-gray-700 hc:border-white bg-white dark:bg-gray-800 hc:bg-black py-2 pl-10 pr-4 text-sm text-gray-900 dark:text-gray-100 hc:text-white placeholder-gray-400 dark:placeholder-gray-500 hc:placeholder-gray-300 outline-none transition-colors focus:border-blue-400 dark:focus:border-blue-500 hc:focus:border-white"
@@ -85,14 +87,15 @@ export default function Home() {
             const previewNames = catTools
               .slice(0, 4)
               .map((tool) => t.tools[tool.id]?.name ?? tool.id)
+            const CatIcon = categoryIcons[cat]
             return (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => setSearchParams({ cat })}
                 className="group flex flex-col gap-2 rounded-xl border border-gray-200 dark:border-gray-700 hc:border-white bg-white dark:bg-gray-800 hc:bg-black p-5 text-left transition-all hover:border-blue-400 dark:hover:border-blue-500 hc:hover:border-yellow-400 hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">{categoryIcons[cat]}</span>
+                  <CatIcon className="h-6 w-6 text-gray-500 dark:text-gray-400 hc:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors" />
                   <div>
                     <h2 className="font-semibold text-gray-900 dark:text-white hc:text-white">
                       {categoryNames[cat]}
@@ -114,14 +117,14 @@ export default function Home() {
         /* ── Single category drill-down ── */
         <div>
           <button
-            onClick={() => setSelectedCategory(null)}
+            onClick={() => setSearchParams({})}
             className="mb-4 flex items-center gap-1.5 text-sm font-medium text-blue-600 dark:text-blue-400 hc:text-yellow-400 hover:underline"
           >
             <ArrowLeft className="h-4 w-4" />
             {allCategoriesLabel}
           </button>
           <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold text-gray-800 dark:text-gray-200 hc:text-white">
-            <span>{categoryIcons[selectedCategory]}</span>
+            {(() => { const CatIcon = categoryIcons[selectedCategory]; return <CatIcon className="h-5 w-5 text-gray-500 dark:text-gray-400 hc:text-white" /> })()}
             {categoryNames[selectedCategory]}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

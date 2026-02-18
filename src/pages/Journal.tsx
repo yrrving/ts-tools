@@ -14,6 +14,13 @@ export default function Journal() {
 
   return (
     <div className="mx-auto max-w-2xl">
+      <Link
+        to="/"
+        className="mb-6 inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hc:text-white transition-colors hover:text-gray-900 dark:hover:text-white"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        {t.backToTools}
+      </Link>
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{t.journal.heading}</h1>
         <p className="mt-1 text-gray-600 dark:text-gray-400 hc:text-gray-200">{t.journal.description}</p>
