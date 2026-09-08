@@ -10,6 +10,31 @@ export interface ChangelogEntry {
 
 export const changelog: ChangelogEntry[] = [
   {
+    version: '0.26.1',
+    date: '2026-09-08',
+    title: {
+      sv: 'TrainCells: fokusläge för iPad och kiosk',
+      en: 'TrainCells: focus mode for iPad and kiosks',
+      es: 'TrainCells: modo enfoque para iPad y quioscos',
+      fr: 'TrainCells : mode focus pour iPad et bornes',
+      de: 'TrainCells: Fokusmodus für iPad und Kiosk',
+      pt: 'TrainCells: modo de foco para iPad e quiosques',
+    },
+    changes: [
+      {
+        type: 'added',
+        text: {
+          sv: 'Ny knapp "Fokusläge" på TrainCells-sidan som lämnar ByteBox helt och visar bara TrainCells på sin egen webbadress — ingen ByteBox-ram kvar bakom. Tänkt för en iPad i skärmlåst kioskläge, eller för barn som annars kan tycka det är rörigt med en hel hemsida runt själva verktyget.',
+          en: 'New "Focus mode" button on the TrainCells page that leaves ByteBox entirely and shows only TrainCells at its own web address — no ByteBox frame left behind it. Meant for an iPad in locked kiosk mode, or for kids who might otherwise find a whole website around the tool distracting.',
+          es: 'Nuevo botón "Modo enfoque" en la página de TrainCells que abandona ByteBox por completo y muestra solo TrainCells en su propia dirección web — sin el marco de ByteBox detrás. Pensado para un iPad en modo quiosco bloqueado, o para niños a quienes un sitio web entero alrededor de la herramienta les puede resultar confuso.',
+          fr: 'Nouveau bouton « Mode focus » sur la page TrainCells qui quitte entièrement ByteBox et n\'affiche que TrainCells à sa propre adresse web — plus aucun cadre ByteBox derrière. Pensé pour un iPad en mode borne verrouillé, ou pour les enfants que tout un site web autour de l\'outil pourrait distraire.',
+          de: 'Neuer „Fokusmodus"-Button auf der TrainCells-Seite, der ByteBox komplett verlässt und nur TrainCells unter seiner eigenen Webadresse zeigt — kein ByteBox-Rahmen mehr dahinter. Gedacht für ein iPad im gesperrten Kioskmodus oder für Kinder, die eine ganze Website rund um das Werkzeug sonst ablenkend finden könnten.',
+          pt: 'Novo botão "Modo de foco" na página do TrainCells que sai completamente do ByteBox e mostra apenas o TrainCells no seu próprio endereço web — sem a moldura do ByteBox por trás. Pensado para um iPad em modo quiosque bloqueado, ou para crianças que possam achar todo um site à volta da ferramenta uma distração.',
+        },
+      },
+    ],
+  },
+  {
     version: '0.26.0',
     date: '2026-09-07',
     title: {

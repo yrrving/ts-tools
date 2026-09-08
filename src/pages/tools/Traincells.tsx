@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Maximize2, Minimize2, ExternalLink } from 'lucide-react'
+import { Maximize2, Minimize2, ExternalLink, Expand } from 'lucide-react'
 import { useLanguage } from '../../context/LanguageContext'
 import BackLink from '../../components/BackLink'
 
@@ -40,6 +40,14 @@ export default function Traincells() {
             {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
             {isFullscreen ? 'Avsluta helskärm' : 'Helskärm'}
           </button>
+          <a
+            href={TRAINCELLS_URL}
+            title="Lämnar ByteBox helt och visar bara TrainCells på sin egen adress — bra att peka en iPad i skärmlåst kioskläge mot."
+            className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hc:text-white transition-colors hover:text-blue-700 dark:hover:text-blue-300"
+          >
+            <Expand className="h-4 w-4" />
+            Fokusläge (för iPad/kiosk)
+          </a>
           <a
             href={TRAINCELLS_URL}
             target="_blank"
